@@ -1,4 +1,5 @@
 # Hagrid Docker Container
+[![pipeline status](https://gitlab.com/chimbosonic/hagrid-docker/badges/master/pipeline.svg)](https://gitlab.com/chimbosonic/hagrid-docker/-/commits/master)
 
 A simple container that runs https://gitlab.com/hagrid-keyserver/hagrid
 
