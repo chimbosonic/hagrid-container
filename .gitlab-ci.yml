@@ -11,7 +11,7 @@ docker build:
   stage: Build image
   script:
   - docker info
-  - docker build -t $LATEST_VER .
+  - docker build -t $LATEST_VER -t $COMMIT_VER .
 
 docker push:
   stage: Push to Docker Hub
