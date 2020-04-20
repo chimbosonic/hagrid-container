@@ -9,6 +9,8 @@ stages:
 
 docker build:
   stage: Build image
+  only:
+  - master
   script:
   - docker info
   - docker build -t $LATEST_VER -t $COMMIT_VER .
