@@ -1,9 +1,9 @@
-FROM rustlang/rust:nightly-slim
+FROM rust:slim
 
 COPY scripts/build.sh ./
 RUN chmod +x ./build.sh && ./build.sh
 
-FROM rustlang/rust:nightly-slim
+FROM rust:slim
 
 COPY scripts/install.sh ./
 
