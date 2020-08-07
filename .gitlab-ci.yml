@@ -1,26 +1,39 @@
 image: docker:git
+
 services: 
   - docker:dind
+
 variables:
-  LATEST_VER: chimbosonic/hagrid:latest
-  COMMIT_VER: chimbosonic/hagrid:$CI_COMMIT_SHORT_SHA
+  IMAGE_NAME: chimbosonic/hagrid
+  REGISTRY: index.docker.io
+
+before_script:
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD" $REGISTRY
+
 stages:
-  - Build image
-  - Push to Docker Hub
+  - Build
+  - Release
 
-docker build:
-  stage: Build image
+Build image:
+  stage: Build
   only:
-  - master
+    changes:
+      - Dockerfile
+      - scripts/**
   script:
-  - docker info
-  - docker build -t $LATEST_VER -t $COMMIT_VER .
+    - docker build -t $IMAGE_NAME -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
+    - docker image ls
+    - docker push $IMAGE_NAME
 
-docker push:
-  stage: Push to Docker Hub
+Release image:
+  stage: Release
   only:
-  - master
+    ref:
+      - master
+    changes:
+      - Dockerfile
+      - scripts/**  
   script:
-  - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
-  - docker push $LATEST_VER
-  - docker push $COMMIT_VER
+    - docker pull $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker tag $IMAGE_NAME:$CI_COMMIT_SHORT_SHA $IMAGE_NAME:latest
+    - docker $IMAGE_NAME:latest
