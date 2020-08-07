@@ -28,8 +28,7 @@ Build image:
 Release image:
   stage: Release
   only:
-    ref:
-      - master
+    - master
     changes:
       - Dockerfile
       - scripts/**  
