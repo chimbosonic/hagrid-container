@@ -5,10 +5,9 @@ services:
 
 variables:
   IMAGE_NAME: chimbosonic/hagrid
-  REGISTRY: index.docker.io
 
 before_script:
-  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD" $REGISTRY
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD"
 
 stages:
   - Build
