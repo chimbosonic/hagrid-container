@@ -45,7 +45,7 @@ jobs:
             type=raw,value=latest
           labels: |
             org.opencontainers.image.title=hagrid
-            org.opencontainers.image.description=Hagrid as in, "keeper of keys". Verifying OpenPGP keyserver, written in Rust.
+            org.opencontainers.image.description=Hagrid as in, \"keeper of keys\". Verifying OpenPGP keyserver, written in Rust.
             org.opencontainers.image.authors=Alexis Lowe <alexis.lowe@protonmail.com>
             org.opencontainers.image.documentation=https://github.com/chimbosonic/hagrid-container/blob/main/README.md
             org.opencontainers.image.url=https://hub.docker.com/r/chimbosonic/hagrid
