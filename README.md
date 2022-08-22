@@ -25,15 +25,9 @@ cosign verify --key cosign.pub chimbosonic/hagrid:latest
 ### plain docker
 
 ```bash
-docker run --rm -it -p 7272:7272\
+docker run --rm -it -p 8080:8080\
 	-v $(shell pwd)/data:/var/lib/hagrid\
-	-e port=7272\
-	-e base_URI="https://localhost:7272"\
-	-e from="noreply@localhost"\
-	-e x_accel_redirect=false\
-	-e token_secret="hagrid"\
-	-e token_validity=3600\
-	-e mail_rate_limit=60 chimbosonic/hagrid:latest
+	chimbosonic/hagrid:latest
 ```
 
 ### How to build
@@ -46,6 +40,6 @@ make build
 
 On first run it will poplate the data folder with the default distribution files I recommend editing them.
 
-The Rocket.toml contains the config of hagrid and should also be changed accordingly. The environment values let you edit some of the fields during generation.
+The Rocket.toml contains the config of hagrid and should also be changed accordingly.
 
 All credit goes to the maintainers of [Hagrid](https://gitlab.com/hagrid-keyserver/hagrid)

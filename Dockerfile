@@ -10,6 +10,7 @@ COPY scripts/install.sh ./
 RUN chmod +x ./install.sh && ./install.sh
 
 COPY --from=0 /build/hagrid/target/release/hagrid /usr/local/bin/hagrid
+COPY --from=0 /build/hagrid/Rocket.toml.dist /hagrid_template/Rocket.toml
 COPY --from=0 /build/hagrid/dist/ /hagrid_template/
 
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
