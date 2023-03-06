@@ -1,12 +1,13 @@
-# Hagrid OCI image
-
 ![pipeline status](https://github.com/chimbosonic/hagrid-container/actions/workflows/main.yml/badge.svg?branch=main)
+# Hagrid OCI image
 
 This is a Hagrid OCI image built using https://gitlab.com/hagrid-keyserver/hagrid.
 
 Base image is `rust:slim`.
 
-The image is available on Docker Hub [here](https://hub.docker.com/repository/docker/chimbosonic/hagrid)
+The image can be pulled from the following repositories:
+- Docker Hub [here](https://hub.docker.com/repository/docker/chimbosonic/hagrid)
+- Quay.io [here](https://quay.io/repository/chimbosonic/hagrid)
 
 Source code and pipeline can be found [here](https://github.com/chimbosonic/hagrid-container)
 
