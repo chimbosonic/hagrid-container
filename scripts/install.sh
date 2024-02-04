@@ -2,7 +2,7 @@
 
 function install_deps() {
   apt-get update -y
-  apt-get install -y nettle-dev gettext
+  apt-get install -y gettext
 }
 
 function prep_install {

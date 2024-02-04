@@ -5,7 +5,7 @@ REPO=https://gitlab.com/hagrid-keyserver/hagrid.git
 
 function install_deps() {
 	apt-get update -y
-	apt-get install -y zsh gnutls-bin nettle-dev gcc llvm-dev libclang-dev build-essential pkg-config gettext git
+	apt-get install -y build-essential pkg-config clang libclang-dev libssl-dev gettext zsh git
 }
 
 function prep_build() {
