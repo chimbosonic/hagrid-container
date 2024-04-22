@@ -1,0 +1,69 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Over | <a href="/about/news">Nieuws</a> | <a href="/about/usage">Gebruik</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistieken</a> | <a href="/about/privacy">Privacy</a>
+</h2></center>
+
+    <p>De <tt>keys.openpgp.org</tt> server is een openbare dienst voor de
+distributie en vinden van OpenPGP-compatibele sleutels, gewoonlijk
+wordt een "sleutelserver" genoemd.</p>
+
+    <p><strong>Raadpleeg voor instructies onze <a href="/about/usage">gebruiksgids</a>.</strong></p>
+
+    <h3>Hoe het werkt</h3>
+
+    <p>Een OpenPGP-sleutel bevat twee soorten informatie:</p>
+
+    <ul>
+<li>
+<strong>Identiteitsinformatie</strong> beschrijft de delen van
+ een sleutel die de eigenaar identificeert, ook bekend als "Gebruikers-ID's".
+ Een gebruikers-ID bevat doorgaans een naam en een e-mailadres.</li>
+        <li>
+<strong>Niet-identiteitsgegevens</strong> is allemaal technisch
+informatie over de sleutel zelf. Dit omvat de grote getallen
+gebruikt voor het verifiëren van handtekeningen en het versleutelen van berichten.
+Het bevat ook metagegevens zoals de aanmaakdatum, een bepaalde vervaldatum
+datums en intrekkingsstatus.</li>
+    </ul>
+<p>Traditioneel zijn deze stukjes informatie altijd samen verspreid
+Op <span class="brand">keys.openpgp.org</span> worden deze
+anders behandeld. Terwijl iedereen alle delen van een OpenPGP-sleutel kan uploaden
+naar <span class="brand">keys.openpgp.org</span>,  zal onze sleutelserver
+alleen bepaalde delen behouden en publiceren onder bepaalde
+voorwaarden:</p>
+
+    <p>Alle <strong>niet-identiteitsinformatie</strong> wordt vrij opgeslagen
+herverdeeld, als het een cryptografische integriteitscontrole doorstaat.
+Iedereen kan deze onderdelen op elk moment downloaden omdat ze alleen
+technische gegevens bevatten die niet kunnen worden gebruikt om een persoon rechtstreeks te identificeren.
+Goede OpenPGP-software kan <span class="brand">keys.openpgp.org</span> gebruiken
+om deze informatie up-to-date te houden voor elke sleutel die het kent.
+Dit helpt OpenPGP-gebruikers om veilige en betrouwbare communicatie te onderhouden.</p>
+
+    <p>De <strong>identiteitsgegevens</strong> in een OpenPGP-sleutel
+wordt alleen verspreid met toestemming.
+Het bevat persoonsgegevens en is niet strikt noodzakelijk voor
+een sleutel die wordt gebruikt voor codering of handtekeningverificatie.
+Zodra de eigenaar toestemming geeft door zijn e-mailadres te verifiëren,
+is de sleutel te vinden via zoeken op adres.</p>
+
+    <h3 id="community">Community en platform</h3>
+
+    <p>Deze service wordt uitgevoerd door gezamenlijke 'community' inspanningen.
+U kunt met ons praten via
+#hagrid op Freenode IRC,
+ook bereikbaar als #hagrid:stratum0.org op Matrix.
+Uiteraard kunt u ons ook bereiken via e-mail,
+via <tt>support apenstaartje keys punt openpgp punt org</tt>.
+De mensen die dit runnen, komen
+van verschillende projecten in het OpenPGP-ecosysteem,
+waaronder Sequoia-PGP, OpenKeychain en Enigmail.</p>
+
+    <p>Technisch,
+<tt>keys.openpgp.org</tt> draait op de <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a> sleutelserver software,
+die is gebaseerd op <a href="https://sequoia-pgp.org">Sequoia-PGP</a>.
+We draaien op <a href="https://eclips.is" target="_blank">eclips.is</a>,
+een hostingplatform gericht op Internet Freedom projecten,
+die wordt beheerd door <a href="https://greenhost.net/" target="_blank">Greenhost</a>.</p>
+</div>
+{{/layout}}

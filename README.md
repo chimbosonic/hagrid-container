@@ -30,6 +30,10 @@ docker run --rm -it -p 8080:8080\
 	-v $(shell pwd)/data:/var/lib/hagrid\
 	chimbosonic/hagrid:latest
 ```
+### plain docker on Powershell CLI (Windows)
+
+docker run --rm -it -p 8080:8080 -v $PWD\data:/var/lib/hagrid chimbosonic/hagrid:latest
+
 
 ### How to build
 

@@ -1,0 +1,10 @@
+{{#> layout}}
+  {{#with page}}
+  <div id="verification-result">
+    <p>
+      {{ text "Your key <span class=\"fingerprint\">{{ key_fpr }}</span> is now published for the identity <a href=\"{{userid_link}}\" target=\"_blank\"><span class=\"email\">{{ userid }}</span></a>." rerender }}
+    </p>
+  </div>
+  {{/with}}
+{{/layout}}
+

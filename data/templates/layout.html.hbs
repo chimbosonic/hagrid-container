@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{htmldir}}" class="{{htmlclass}}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/site.css?v=19" type="text/css"/>
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="keys.openpgp.org newsfeed" />
+    <title>keys.openpgp.org</title>
+</head>
+  <body lang="{{lang}}">
+    <div class="card">
+      <h1><a class="brand" href="/">keys.openpgp.org</a></h1>
+      {{> @partial-block }}
+      <div class="spacer"></div>
+    </div>
+    <div class="attribution">
+      <p>
+        <a href="https://gitlab.com/keys.openpgp.org/hagrid/">Hagrid</a>
+        {{ text "v{{ version }} built from" rerender }}
+        <a href="https://gitlab.com/keys.openpgp.org/hagrid/commit/{{ commit }}">{{ commit }}</a>
+      </p>
+      <p>{{ text "Powered by <a href=\"https://sequoia-pgp.org\">Sequoia-PGP</a>" }}</p>
+      <p>{{ text "Background image retrieved from <a href=\"https://www.toptal.com/designers/subtlepatterns/subtle-grey/\">Subtle Patterns</a> under CC BY-SA 3.0" }}</p>
+    </div>
+   </body>
+</html>

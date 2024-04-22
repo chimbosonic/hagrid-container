@@ -1,0 +1,32 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Sobre | <a href="/about/news">Novetats</a> | <a href="/about/usage">Ús</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Estadístiques</a> | <a href="/about/privacy">Privacitat</a>
+</h2></center>
+
+    <p>El servidor <tt>keys.openpgp.org</tt> és un servei públic per a la distribució i descobriment de claus compatibles amb OpenPGP, normalment conegut com a servidor de claus o "keyserver".</p>
+
+    <p><strong>Per instruccions, veieu la nostra <a href="/about/usage">guia d'ús</a>.</strong></p>
+
+    <h3>Com funciona</h3>
+
+    <p>Una clau OpenPGP conté dos tipus d'informació:</p>
+
+    <ul>
+<li>
+<strong>Informació d'identitat</strong> descriu les parts de la clau que identifiquen el seu propietari, també coneguda com a identificadors d'usuari o "User IDs". Un User ID tipicament inclou un nom i una adreça de correu electrònic.</li>
+        <li>
+<strong>Informació no identitària</strong> és tota aquella informació tècnica sobre la clau mateixa. Inclou els grans nombres utilitzats per a verificar signatunes i encriptar missatges. També inclou "metadades" com la data de creació, dates d'expiració, i estat de revocació.</li>
+    </ul>
+<p>Tradicionalment aquestes peces d'informació s'han distribuït sempre juntes. A <span class="brand">keys.openpgp.org</span> es tracten de forma diferent. Mentre que qualsevol pot pujar totes les parts d'una clau OpenPGP a <span class="brand">keys.openpgp.org</span>, el nostre servidor de claus només guarda i publica determinades parts sota determinades condicions:</p>
+
+    <p>Qualsevol <strong>informació no identitària</strong> serà guardada i gratuitament distribuïda, si passa un controls d'integritat criptogràfica. Qualsevol pot descarregar aquestes parts en qualsevol moment ja que contenen només dades tècniques que no poden ser utilitzades per a identificar directament una persona. Un bon programari OpenPGP pot utilitzar <span class="brand">keys.openpgp.org</span> per mantenir aquesta informació al dia per a qualsevol clau que conegui. Això ajuda als usuaris de OpenPGP a mantenir comunicacions segures i confiables.</p>
+
+    <p>La <strong>informació identitària</strong> d'una clau OpenPGP només es distribueix amb consentiment. Conté dades personals, i no és estrictament necessaria per encriptar o verificar signatures d'una clau. Un cop el propietari dóna el seu consentiment verificant la seva adreça de correu electrònic, la clau pot trobar-se amb una cerca per adreça.</p>
+
+    <h3 id="community">Comunitat i plataforma</h3>
+
+    <p>Aquest servei funciona com un treball comunitari. Podeu parlar amb nosaltres al canal #hagrid de Freenode IRC, també com #hagrid:stratum0.org a Matrix. Per suposat podeu trobar-nos per correu electrònic a <tt>support at keys dot openpgp dot org</tt>. Els companys que fan funcionar aquest servei provenen de diferents projectes dins de l'ecosistema OpenPGP, incloent-hi Sequoia-PGP, OpenKeychain, i Enigmail.</p>
+
+    <p>Tècnicament, <tt>keys.openpgp.org</tt> funciona sobre el programari servidor de claus <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a>, que està basat en <a href="https://sequoia-pgp.org">Sequoia-PGP</a>. Estem funcionant sobre <a href="https://eclips.is" target="_blank">eclips-is</a>, una plataforma de "hosting" que posa focus en projectes de la Internet Freedom, i gestionada per <a href="https://greenhost.net/" target="_blank">Greenhost</a>.</p>
+</div>
+{{/layout}}

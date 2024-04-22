@@ -1,0 +1,63 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Om | <a href="/about/news">Nyheter</a> | <a href="/about/usage">Bruk</a> | <a href="/about/faq">Ofte stilte spørsmål</a> | <a href="/about/stats">Statistikk</a> | <a href="/about/privacy">Personvern</a>
+</h2></center>
+
+    <p>Tjeneren <tt>keys.openpgp.org</tt> er en offentlig tjeneste
+for distribusjon og oppdagelse av OpenPGP-kompatible nøkler,
+ofte kalt «nøkkeltjener».</p>
+
+    <p><strong>For instruksjoner, se <a href="/about/usage">bruksanvisningen</a> vår.</strong></p>
+
+    <h3>Slik virker det</h3>
+
+    <p>En OpenPGP-nøkkel inneholder to typer informasjon:</p>
+
+    <ul>
+<li>
+<strong>Identifiserende opplysninger</strong> brukes om delene av en nøkkel som identifiserer eieren, også kjent som «bruker-IDer».
+En bruker-ID inneholder vanligvis et navn og en e-postadresse.</li>
+        <li>
+<strong>Ikke-identifiserende opplysninger</strong> er alle de tekniske
+opplysningene om selve nøkkelen. Dette omfatter de store tallene
+som brukes for å bekrefte signaturer og for å kryptere meldinger.
+Det omfatter også metadata som opprettelsesdato, noen utløpsdatoer og status for tilbakekalling.</li>
+    </ul>
+<p>Det har vært vanlig å gi ut disse opplysningene samlet.
+På <span class="brand">keys.openpgp.org</span> blir de behandlet på en annen måte.
+Mens hvem som helst kan laste opp alle deler av en hvilken som helst OpenPGP-nøkkel til <span class="brand">keys.openpgp.org</span>, vil nøkkeltjeneren bare ta vare på og offentliggjøre visse deler av nøkkelen, og bare under visse omstendigheter:</p>
+
+    <p><strong>Ikke-identifiserende opplysninger</strong> vil bli lagret og fritt gitt ut på ny dersom de består en kryptografisk integritetssjekk.
+Hvem som helst kan laste ned disse opplysningene ettersom de bare
+inneholder informasjon som ikke kan brukes til å identifisere en person direkte.
+Bra OpenPGP-programvare kan bruke <span class="brand">keys.openpgp.org</span>
+for å holde slike opplysninger oppdatert for enhver nøkkel den kjenner til.
+Dette hjelper OpenPGP-brukere med å opprettholde sikker og pålitelig kommunikasjon.</p>
+
+    <p>De <strong>Identifiserende opplysningene</strong> i en OpenPGP-nøkkel
+blir bare gitt ut med samtykke.
+De inneholder personlig informasjon, og er ikke strengt nødvendige
+for at en nøkkel skal kunne brukes til å kryptere eller bekrefte signaturer.
+Så snart eieren gir et slikt samtykke ved å bekrefte e-postadressen sin,
+kan nøkkelen finnes ved å søke på adressen.</p>
+
+    <h3 id="community">Fellesskap og plattform</h3>
+
+    <p>Denne tjenesten blir drevet på dugnad.
+Du kan snakke med oss på
+#hagrid på Freenode IRC,
+som du også kan få tilgang til via #hagrid:stratum0.org på Matrix.
+Selvsagt når du oss også på e-post:
+<tt>support alfakrøll keys punktum openpgp punktum org</tt>.
+Folkene som driver dette kommer
+fra diverse prosjekter innenfor OpenPGP-økosystemet,
+blant annet Sequoia-PGP, OpenKeychain og Enigmail.</p>
+
+    <p>Når det gjelder det tekniske,
+kjører <tt>keys.openpgp.org</tt> nøkkeltjener-programvaren <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a>,
+som er basert på <a href="https://sequoia-pgp.org">Sequoia-PGP</a>.
+Vi kjører på <a href="https://eclips.is" target="_blank">eclips.is</a>,
+en hostingplattform for prosjekter som arbeider for et fritt Internett.
+Plattformen drives av <a href="https://greenhost.net/" target="_blank">Greenhost</a>.</p>
+</div>
+{{/layout}}

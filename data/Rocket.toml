@@ -1,0 +1,55 @@
+[global]
+address = "0.0.0.0"
+port = 8080
+
+[debug]
+base-URI = "http://localhost:8080"
+from = "noreply@localhost"
+x-accel-redirect = false
+token_secret = "hagrid"
+token_validity = 3600
+template_dir = "dist/templates"
+assets_dir = "dist/assets"
+keys_internal_dir = "state/keys-internal"
+keys_external_dir = "state/keys-external"
+token_dir = "state/tokens"
+tmp_dir = "state/tmp"
+mail_rate_limit = 60
+maintenance_file = "state/maintenance"
+enable_prometheus = false
+email_template_dir = "dist/email-templates"
+
+[staging]
+base-URI = "https://keys.openpgp.org"
+from = "noreply@keys.openpgp.org"
+x-accel-redirect = true
+token_secret = "hagrid"
+token_validity = 3600
+template_dir = "templates"
+keys_internal_dir = "keys"
+keys_external_dir = "public/keys"
+assets_dir = "public/assets"
+token_dir = "tokens"
+tmp_dir = "tmp"
+mail_rate_limit = 60
+maintenance_file = "maintenance"
+enable_prometheus = false
+email_template_dir = "email-templates"
+
+[release]
+base-URI = "https://keys.openpgp.org"
+base-URI-Onion = "https://keys.openpgp.org"
+from = "noreply@keys.openpgp.org"
+x-accel-redirect = true
+token_secret = "generated production secret"
+token_validity = 3600
+template_dir = "templates"
+keys_internal_dir = "keys"
+keys_external_dir = "public/keys"
+assets_dir = "public/assets"
+token_dir = "tokens"
+tmp_dir = "tmp"
+mail_rate_limit = 3600
+maintenance_file = "maintenance"
+enable_prometheus = false
+email_template_dir = "email-templates"

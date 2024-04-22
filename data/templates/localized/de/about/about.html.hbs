@@ -1,0 +1,39 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Übersicht | <a href="/about/news">News</a> | <a href="/about/usage">Nutzung</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistik</a> | <a href="/about/privacy">Privacy Policy</a>
+</h2></center>
+
+    <p>Der <span class="brand">keys.openpgp.org</span> Server ist ein öffentlicher Service für die Verteilung von OpenPGP-Schlüsseln, üblicherweise als "Keyserver" bezeichnet.</p>
+
+    <p><strong>Für Details zur Nutzung, siehe <a href="/about/usage">Nutzungshinweise</a></strong></p>
+
+    <h3>Funktionsweise</h3>
+
+    <p>Ein OpenPGP Schlüssel enthält zwei Arten Information:</p>
+
+    <ul>
+<li>
+<strong>Identitäten</strong> beschreiben die Teile des Schlüssels, welche den Besitzer identifizieren. Sie sind auch bekannt als "User IDs", und enhalten typischerweise einen Namen und eine Email-Adresse.</li>
+        <li>Die <strong>Nicht-Identitäts-Informationen</strong> enthalten techische Details über den Schlüssel an sich. Dies sind insbesondere die mathematischen Objekte, mit deren Hilfe Signaturen berechnet und Nachrichten verschlüsselt werden. Auch enthält dies Metadaten des Schlüssels wie den Zeitpunkt der Erstellung, ein eventuelles Ablaufdatum, und den Widerrufsstatus.</li>
+    </ul>
+<p>Traditionell wurden diese Bestandteile von Keyservern gemeinsam ausgeliefert. Auf <span class="brand">keys.openpgp.org</span> werden sie jedoch getrennt behandelt: Während Nicht-Identität-Informationen jedes Schlüssels frei hochgeladen werden können, werden Identitäts-Informationen nur unter bestimmten Bedingungen gespeichert und weiter veröffentlicht:</p>
+
+    <p>Die <strong>Nicht-Identitäts-Informationen</strong> eines Schlüssels sind rein technischer Natur, und können nicht zur direkten Identifikation von Personen verwendet werden. Sie werden nach Prüfung der kryptografischen Integrität ohne weitere Bestätigung gespeichert und verteilt. Fortgeschrittene OpenPGP-Anwendungen können <span class="brand">keys.openpgp.org</span> verwenden, um diese Informationen in allen bekannten Schlüsseln auf dem neusten Stand zu halten, und eine sichere und zuverlässige Kommunikation sicherzustellen.</p>
+
+    <p>Die <strong>Identitäts-Informationen </strong> eines OpenPGP-Schlüssels enthalten persönliche Daten ihres Besitzers. Sie werden ausschließlich mit dessen Zustimmung veröffentlicht, welche mit einer simplen Bestätigung via Email abgefragt wird. Insbesondere kann ein Schlüssel nur mit Zustimmung anhand seiner Email-Adressen in der Suche gefunden werden.</p>
+
+    <h3 id="community">Community und Plattform</h3>
+
+    <p>Dieser Dienst wird als Gemeinschaftsprojekt betrieben.
+        Du kannst mit uns in
+        #hagrid auf dem OFTC IRC sprechen,
+        auch als #hagrid:stratum0.org auf Matrix erreichbar.
+        Natürlich kannst du uns auch unter,
+        <tt>support at keys dot openpgp punkt org</tt> per E-Mail erreichen.
+        Die Leute, die den Dienst betreiben, kommen
+        aus verschiedenen Projekten im OpenPGP Ökosystem,
+        wie Sequoia-PGP, OpenKeychain, und Enigmail.</p>
+
+    <p>Technisch verwendet <tt>keys.openpgp.org</tt> die <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a> Keyserver-Software, welche auf <a href="https://sequoia-pgp.org">Sequoia-PGP</a> basiert. Der Dienst wird gehostet auf der <a href="https://eclips.is" target="_blank">eclips.is</a> Plattform, die von <a href="https://greenhost.net/" target="_blank">Greenhost</a> unterhalten wird und sich auf Internet-Freedom-Projekte spezialisiert.</p>
+</div>
+{{/layout}}

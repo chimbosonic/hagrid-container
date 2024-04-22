@@ -1,0 +1,130 @@
+{{#> layout }}
+<div class="about usage">
+    <center><h2>
+<a href="/about">Übersicht</a> | <a href="/about/news">News</a> | Nutzung | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistik</a> | <a href="/about/privacy">Privacy Policy</a>
+</h2></center>
+
+    <p>Auf dieser Seite sammeln wir Anleitungen zur Nutzung von <span class="brand">keys.openpgp.org</span> mit unterschiedlichen OpenPGP-Anwendungen. Wir sind noch dabei, weitere Anleitungen hinzuzufügen - falls du eine bestimmte vermisst, lass es uns einfach wissen.</p>
+
+    <h2 id="web" style="padding-left: 3%;"><a href="#web">Web-Interface</a></h2>
+    <p>Das Web-Interface auf <span class="brand">keys.openpgp.org</span> erlaubt die folgenden Operationen:</p>
+
+    <p>
+        </p>
+<ul>
+<li>Manuelle <a href="/">Suche</a> nach Schlüsseln, anhand eines Fingerprints oder einer Email-Adresse.</li>
+            <li>
+<a href="/upload">Hochladen</a> von Schlüsseln, mit Bestätigung nach dem Hochladen.</li>
+            <li>
+<a href="/manage">Verwalten</a> von Schlüsseln, insbesondere das Entfernen veröffentlichter Identitäten.</li>
+        </ul>
+<h2 id="enigmail">
+        <div><img src="/assets/img/enigmail.svg"></div>
+        <a href="#enigmail">Enigmail</a>
+    </h2>
+    <p><a href="https://enigmail.net" target="_blank">Enigmail</a> für Thunderbird verwendet <span class="brand">keys.openpgp.org</span> als voreingestellten Keyserver seit Version 2.0.12.</p>
+    <p>Alle Features sind verfügbar ab Enigmail 2.1 (für <a href="https://www.thunderbird.net/en-US/thunderbird/68.0beta/releasenotes/" target="_blank">Thunderbird 68</a> und neuer):</p>
+<ul>
+<li>Schlüssel werden automatisch aktualisiert</li>
+            <li>Schlüssel können während der Generierung hochgeladen werden, inkl. Adress-Bestätigung.</li>
+            <li>Schlüssel können anhand von Email-Adressen gesucht werden.</li>
+        </ul>
+<h2 id="gpg-suite">
+        <div><img src="/assets/img/gpgtools.png"></div>
+        <a href="#gpg-suite">GPG Suite</a>
+    </h2>
+    <p><a href="https://gpgtools.org/">GPG Suite</a> für macOS verwendet <span class="brand">keys.openpgp.org</span> voreingestellt seit August 2019.</p>
+
+    <h2 id="openkeychain">
+        <div><img src="/assets/img/openkeychain.svg"></div>
+        <a href="#openkeychain">OpenKeychain</a>
+    </h2>
+    <p><a href="https://www.openkeychain.org/">OpenKeychain</a> für Android verwendet <span class="brand">keys.openpgp.org</span> voreingestellt seit Juli 2019.</p>
+<ul>
+<li>Schlüssel werden automatisch aktualisiert</li>
+            <li>Schlüssel können anhand von Email-Adressen gesucht werden.</li>
+        </ul>
+<p>Bislang gibt es allerdings keine integrierte Unterstützung für das Bestätigen von Email-Adressen.</p>
+
+    <h2 id="pignus">
+        <div><img src="/assets/img/pignus.png"></div>
+        <a href="#pignus">Pignus</a>
+    </h2>
+    <p><a href="https://www.frobese.de/pignus/">Pignus</a> für iOS
+        verwendet  <span class="brand">keys.openpgp.org</span> voreingestellt
+        seit November 2019.</p>
+<ul>
+<li>Schlüssel können zu jedem Zeitpunkt hochgeladen werden.</li>
+            <li>Schlüssel können anhand von Email-Adressen gesucht werden.</li>
+        </ul>
+<h2 id="gnupg">
+        <div><img src="/assets/img/gnupg.svg"></div>
+        <a href="#gnupg">GnuPG</a>
+    </h2>
+
+    <p>Um <a href="https://gnupg.org">GnuPG</a> mit <span class="brand">keys.openpgp.org</span> zu konfigurieren, füge diese Zeile in der <tt>gpg.conf</tt> Datei hinzu:</p>
+<blockquote>keyserver hkps://keys.openpgp.org</blockquote>
+    
+
+    <h4 id="gnupg-retrieve"><a href="#gnupg-retrieve">Schlüssel abrufen</a></h4>
+    <ul>
+<li>Um Schlüssel anhand ihrer E-Mail-Adresse zu suchen:<blockquote>gpg --auto-key-locate keyserver --locate-keys user@example.net</blockquote>
+        </li>
+        <li>Um alle Schlüssel zu aktualisieren (inkl. Widerrufszertifikate und neue Unterschlüssel): <blockquote>gpg --refresh-keys</blockquote>
+        </li>
+    </ul>
+<h4 id="gnupg-upload"><a href="#gnupg-upload">Schlüssel hochladen</a></h4>
+    <p>Schlüssel können mit GnuPG's <tt>--send-keys</tt> Befehl hochgeladen werden, allerdings können auf diese Weise keine Identitäts-Informationen (<a href="/about">was bedeutet das?</a>) bestätigt werden für die Suche per Email-Adresse.</p>
+
+    <ul>
+<li>Du kannst versuchen deinen Schlüssel mittels dieses Shortcuts hochzuladen. Du solltest in der Ausgabe einen Direktlink zur Bestätigungs-Seite erhalten:<blockquote>gpg --export deine_adresse@example.net | curl -T - {{ base_uri }}</blockquote>
+        </li>
+        <li>Alternativ kannst du den Schlüssel exportieren und die Datei auf der <a href="/upload" target="_blank">Upload-Seite</a> hochladen:<blockquote>gpg --export deine_adresse@example.net &gt; my_key.pub</blockquote>
+        </li>
+    </ul>
+<h4 id="gnupg-troubleshooting"><a href="#gnupg-troubleshooting">Bekannte Probleme</a></h4>
+    <ul>
+<li>Manche ältere <tt>~/.gnupg/dirmngr.conf</tt> Dateien enthalten die folgende Zeile:<blockquote>hkp-cacert ~/.gnupg/sks-keyservers.netCA.pem</blockquote>
+            <p>Diese Konfiguration ist nicht mehr notwendig, kann aber Probleme mit Keyserver-Zertifikaten verursachen. Die Zeile kann in aktuellen Versionen gefahrlos entfernt werden.</p>
+        </li>
+        <li>Beim Aktualisieren von Schlüsseln kann der folgende Fehler auftreten:<blockquote>gpg: key A2604867523C7ED8: no user ID</blockquote>
+            Es handelt sich um ein <a href="https://dev.gnupg.org/T4393" target="_blank">bekanntes Problem in GnuPG</a>. Wir arbeiten mit dem GnuPG Team an einer Lösung.
+        </li>
+    </ul>
+<h4 id="gnupg-tor"><a href="#gnupg-tor">Nutzung über Tor</a></h4>
+    <p>Nutzer mit erhöhten Anonymitäts-Anforderungen können <span class="brand">keys.openpgp.org</span> anonym als <a href="https://support.torproject.org/onionservices/#onionservices-2" target="_blank">Onion Service</a> verwenden. Wenn <a href="https://www.torproject.org/" target="_blank">Tor</a> installiert und gestartet ist, verwende dafür die folgende Konfiguration:</p>
+<blockquote>keyserver hkp://zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion</blockquote>
+    
+
+    <h2 style="padding-left: 3%;" id="wkd-as-a-service"><a href="#wkd-as-a-service">"WKD as a Service"</a></h2>
+
+    <p>Der "Web Key Directory"-Standard (WKD) ermöglicht das automatische Auffinden von OpenPGP-Schlüsseln für eine gegebene Email-Adresse, über die Domain des Email-Anbieters.
+Dieser Standard wird von einigen Email-Apps unterstützt, unter anderem <a href="https://www.gpg4win.de/about-de.html" target="_blank">GpgOL</a>.</p>
+<p><span class="brand">keys.openpgp.org</span> kann als automatischer Dienst für WKD von beliebigen Domains verwendet werden.
+Dafür muss lediglich ein <tt>CNAME</tt>-DNS-Eintrag für die <tt>openpgpkey</tt>-Subdomain eingerichtet werden, der auf <tt>wkd.keys.openpgp.org</tt> zeigt.
+Diese Einrichtung sollte im Web-Interface jedes DNS-Hosters möglich sein.</p>
+<p>Sofort nach Einrichtung sind alle bestätigten Email-Adressen der entsprechenden Domain per WKD auffindbar.</p>
+<p>Der <tt>CNAME</tt>-DNS-Eintrag sollte wie folgt aussehen:</p>
+<blockquote>$ drill openpgpkey.example.org<br>
+        ...<br>
+        openpgpkey.example.org.       300     IN      CNAME   wkd.keys.openpgp.org.</blockquote>
+
+    <p>Für die Fehlersuche steht ein einfacher Status-Prüfer zur Verfügung:</p>
+<blockquote>$ curl 'https://wkd.keys.openpgp.org/status/?domain=openpgpkey.example.org'<br>
+        CNAME lookup ok: openpgpkey.example.org resolves to wkd.keys.openpgp.org<br>
+</blockquote>
+
+    <p>Um das Auffinden per WKD zu testen:</p>
+<blockquote>$ gpg  --locate-keys --auto-key-locate clear,nodefault,wkd address@example.org<br>
+</blockquote>
+
+    <h2 style="padding-left: 3%;">API</h2>
+
+    <p>Es gibt eine Schnittstelle (API) für integrierte Unterstützung in OpenPGP-Anwendungen. Siehe dazu unsere <a href="/about/api">API-Dokumentation</a>.</p>
+
+    <h2 style="padding-left: 3%;">Andere Client-Software</h2>
+
+    <p>Fehlt eine Anleitung für die Anwendung, die du verwendest? Schick eine Email an <span class="email">support at keys punkt openpgp punkt org</span>, und wir werden versuchen eine entsprechende Anleitung hinzuzufügen.</p>
+
+</div>
+{{/layout}}

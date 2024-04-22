@@ -1,0 +1,283 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>
+<a href="/about">Despre</a> | Noutăți | <a href="/about/usage">Utilizare</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistici</a> | <a href="/about/privacy">Confidențialitate</a>
+</h2></center>
+
+    <h2 id="2019-11-12-celebrating-100k">
+      <div style="float: right; font-size: small; line-height: 2em;">2019-11-12 📅</div>
+      <a style="color: black;" href="/about/news#2019-11-12-celebrating-100k">Sărbătorim 100.000 de adrese verificate! 📈</a>
+    </h2>
+
+    <p>În urmă cu cinci luni, am lansat acest serviciu.
+        Și chiar astăzi, am atins o etapă remarcabilă:</p>
+<center style="margin-top: 2em; margin-bottom: 2em;">
+<img src="/assets/img/stats-addresses-2019-11-12.png" style="padding: 1px; border: 1px solid gray;"><br><strong>O sută de mii de adrese de e-mail verificate!</strong>
+</center>
+
+    <p>Mulțumesc tuturor celor care folosesc acest serviciu!
+        Și mulțumiri în special celor care ne-au oferit feedback,
+        traduceri, sau chiar contribuții la cod!</p>
+<p>Câteva actualizări despre lucrurile la care am lucrat:</p>
+<ul>
+<li>Această pagină de știri este acum disponibilă ca<strong><a target="_blank" href="/atom.xml">un feed atomic<img src="/assets/img/atom.svg" style="height: 0.8em;"></a></strong>.</li>
+        <li>Am lucrat la
+            un <strong><a target="_blank" href="https://gitlab.com/keys.openpgp.org/hagrid/issues/131">un nou mecanism de reîmprospătare a cheilor</a></strong>
+           care protejează mai bine confidențialitatea utilizatorului.</li>
+        <li>Lucrările de <strong>localizare</strong> sunt în plină desfășurare!
+            sperăm să avem în curând câteva limbi pregătite pentru implementare.</li>
+    </ul>
+<p>Dacă doriți să vedeți <span class="brand">keys.openpgp.org</span>
+       tradus în limba dvs. maternă,
+        vă rugăm <a target="_blank" href="https://www.transifex.com/otf/hagrid/">să vă alăturați echipei de traducere</a>
+        pe Transifex.
+       Am aprecia ajutorul în special pentru limbile <strong>rusă</strong>, <strong>italiană</strong>, <strong>poloneză</strong> și<strong>olandeză</strong>.</p>
+<p>Asta e tot, o să fie scurt.!
+        <span style="font-size: x-large;">👍️</span></p>
+<hr style="margin-top: 2em; margin-bottom: 2em;">
+<h2 id="2019-09-12-three-months-later">
+      <div style="float: right; font-size: small; line-height: 2em;">2019-09-12 📅</div>
+      <a style="color: black;" href="/about/news#2019-09-12-three-months-later">Trei luni de la lansare ✨</a>
+    </h2>
+
+    <p>Au trecut deja trei luni
+        <a href="/about/news#2019-06-12-launch">de când am lansat</a>
+        <span class="brand">keys.openpgp.org</span>.
+       Suntem bucuroși să semnalăm următorul raport:
+        A fost un succes răsunător!
+        🥳</p>
+<h4>Adopție la clienți</h4>
+
+    <p>Acest
+        <span class="brand">keys.openpgp.org</span>
+         a fost primit foarte bine de către utilizatori,
+        iar clienții îl adoptă rapid.
+        În prezent, acesta este utilizat în mod implicit în
+        <a href="https://gpgtools.org/" target="_blank">GPGTools</a>,
+        <a href="https://enigmail.net/" target="_blank">Enigmail</a>,
+        <a href="https://www.openkeychain.org/" target="_blank">OpenKeychain</a>,
+        <a href="https://github.com/firstlookmedia/gpgsync" target="_blank">GPGSync</a>,
+        Debian,
+        NixOS,
+       și altele.
+         Multe tutoriale au fost, de asemenea, actualizate,
+        indicând utilizatorilor calea noastră.</p>
+<p>La momentul redactării acestui articol,
+        peste 70.000 de adrese de e-mail
+        au fost verificate.</p>
+<center style="margin-top: 2em; margin-bottom: 2em;">
+<img src="/assets/img/stats-addresses-2019-09-12.png" style="padding: 1px; border: 1px solid gray;"><br><span style="font-size: smaller;">Dacă asta nu este o curbă promițătoare, nu știu ce este. :)</span>
+</center>
+
+    <p>O mențiune specială este pentru GPGTools pentru macOS.
+        Au implementat procesul de actualizare atât de ușor,
+        că numărul de adrese verificate a explodat complet
+        când au lansat actualizarea.</p>
+<h4>Totul e bine în operațiuni</h4>
+
+    <p>Nu există prea multe în raport din punct de vedere operațional,
+        și nicio veste este o veste bună în acest caz!
+        De la lansare,
+        nu a existat aproape nicio întrerupere,
+        a apărut doar o singură eroare
+        care a cauzat pentru scurt timp probleme în timpul încărcării,
+        iar volumul de asistență a fost destul de scăzut.</p>
+<p>Traficul nostru este în prezent
+        la aproximativ zece cereri pe secundă
+        (mai multe în timpul zilei, mai puține în weekend),
+        și am livrat aproximativ 100.000 de e-mailuri
+        în ultima lună.
+        Nu vă faceți griji.</p>
+<p>Am făcut câteva mici îmbunătățiri operaționale
+        inclusiv desfășurarea de
+        <a href="http://dnsviz.net/d/keys.openpgp.org/dnssec/" target="_blank">DNSSEC</a>,
+       implementarea unor
+        <a href="/about/api#rate-limiting" target="_blank">limitări ale ratei</a>,
+        am pus la punct
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">politica de securitate a conținutului</a>
+        antetele,
+        și activarea
+        <a href="https://blog.torproject.org/whats-new-tor-0298" target="_blank">single-hop</a>
+        pe serviciul nostru Tor Onion.
+        Puteți găsi o listă mai completă
+        <a href="https://gitlab.com/keys.openpgp.org/hagrid/merge_requests?scope=all&amp;utf8=%E2%9C%93&amp;state=merged" target="_blank">aici</a>.</p>
+<h4>Livrare securizată a e-mailurilor cu MTA-STS</h4>
+
+    <p>O îmbunătățire care merită o mențiune specială este
+        <a href="https://www.hardenize.com/blog/mta-sts">MTA-STS</a>,
+        care îmbunătățește securitatea mesajelor de poștă electronică de ieșire.</p>
+<p>În timp ce HTTPS este implementat destul de universal în aceste zile,
+        din păcate, acest lucru nu este valabil și pentru e-mail.
+        Multe servere nu folosesc deloc criptarea,
+        sau folosesc un certificat auto-semnat
+        în locul unuia corespunzător (de exemplu, de la Let's Encrypt).
+        Dar eșecurile de livrare îi supără pe clienți mai mult
+        decât securitatea redusă,
+        și multe e-mailuri sunt încă livrate fără criptare.</p>
+<p>Cu MTA-STS, operatorii de domeniu pot indica
+        (prin HTTPS)
+        că serverul lor de e-mail <em>acceptă</em>criptarea.
+       Atunci când nu se poate stabili o conexiune securizată
+        la un astfel de server,
+        livrarea mesajelor va fi amânată
+        sau, în cele din urmă, va fi respinsă,
+        în loc să continue în condiții de nesiguranță.</p>
+<p>Acest lucru este extrem de util pentru servicii precum
+        <span class="brand">keys.openpgp.org</span>.
+       În cazul în care criptarea nu este de încredere,
+        atacatorii pot intercepta relativ ușor e-mailurile de verificare.
+        Dar pentru furnizorii care au MTA-STS implementat,
+        putem fi siguri că
+        fiecare mesaj este livrat în siguranță,
+        și către serverul potrivit.</p>
+<p>Puteți <a href="https://aykevl.nl/apps/mta-sts/" target="_blank">efectua o verificare</a>
+        pentru a afla dacă furnizorul dvs. de e-mail
+        acceptă MTA-STS.
+        În caz contrar,
+        vă rugăm să le trimiteți un mesaj și să le spuneți
+        să își îmbunătățească nivelul de securitate!</p>
+<h4>Lucrări în curs</h4>
+
+    <p>Lucrăm la două caracteristici:</p>
+<p>primul este <strong>localizarea</strong>.
+       Majoritatea oamenilor nu vorbesc limba engleză,
+        dar până acum aceasta este singura limbă pe care o suportăm.
+        Pentru a face acest serviciu mai accesibil,
+        lucrăm cu OTF's
+        <a href="https://www.opentech.fund/labs/localization-lab/" target="_blank">Localization Lab</a>
+        pentru a face ca site-ul web și e-mailurile de ieșire
+        disponibile în mai multe limbi.</p>
+<p>Al doilea este de a aduce înapoi
+        <strong>semnăturile terților</strong>.
+        <a href="/about/faq#third-party-signatures">După cum se menționează în FAQ</a>,
+        în prezent nu le susținem din cauza spam-ului și a potențialului de abuz.
+        Ideea este de a solicita
+        <a href="https://gitlab.com/openpgp-wg/rfc4880bis/merge_requests/20/diffs" target="_blank">semnături încrucișate</a>,
+       care să permită fiecărei chei să aleagă singură
+        ce semnături de la alte persoane dorește să distribuie.
+        În ciuda acestui pas suplimentar,
+        acest lucru este destul de compatibil cu software-ul existent.
+        De asemenea, se ferește în mod plăcut de utilizatorii
+        cărora nu le pasă de semnături.</p>
+<p>Cu toate că se lucrează în prezent la ambele caracteristici,
+        niciuna dintre ele nu are încă o dată planificată de lansare.</p>
+<p>În ceea ce privește problema "<tt>nici un ID de utilizator</tt>" cu GnuPG
+        (menționată în pagina noastră
+        <a href="/about/news#2019-06-12-launch-challenges">ultima postare de știri</a>
+        și în pagina noastră
+        <a href="/about/faq#older-gnupg" target="_blank">FAQ</a>),
+         un patch care rezolvă această problemă este acum distribuit de Debian,
+        precum și GPGTools pentru macOS.
+        GnuPG upstream nu a fuzionat patch-ul până în prezent.</p>
+<p>Asta e!
+        Vă mulțumim pentru interesul dumneavoastră!
+        <span style="font-size: x-large;">👋</span></p>
+<hr style="margin-top: 2em; margin-bottom: 2em;">
+<h2 id="2019-06-12-launch">
+      <div style="float: right; font-size: small; line-height: 2em;">2019-06-12 📅</div>
+      <a href="/about/news#2019-06-12-launch" style="color: black;">Lansarea unui nou server de chei! 🚀</a>
+    </h2>
+
+    <p>Dintr-un efort comunitar al
+    <a href="https://enigmail.net" target="_blank">Enigmail</a>,
+    <a href="https://openkeychain.org" target="_blank">OpenKeychain</a>,
+    și <a href="https://sequoia-pgp.org">Sequoia PGP</a>,
+   avem plăcerea de a anunța
+    lansarea noului server public de chei OpenPGP
+    <span class="brand">keys.openpgp.org</span>!
+   Ura! 🎉</p>
+<h4>Dă-mi povestea scurtă!</h4>
+
+    <ul>
+<li>Rapid și fiabil. Fără timpi de așteptare, fără timpii de nefuncționare, fără neconcordanțe.</li>
+      <li>Precis. Căutările returnează doar o singură cheie, ceea ce permite descoperirea ușoară a cheilor.</li>
+      <li>Validarea. Identitățile sunt publicate numai cu acord, 
+        în timp ce informațiile fără identitate sunt distribuite în mod liber.</li>
+      <li>Șterse. Utilizatorii pot șterge informațiile personale cu o simplă confirmare prin e-mail.</li>
+      <li>Construit pe Rust, alimentat de<a href="https://sequoia-pgp.org" target="_blank">Sequoia PGP</a> - gratuit și open source, rulează AGPLv3.</li>
+    </ul>
+
+    Începeți chiar acum prin <a href="/upload">încărcarea cheii dumneavoastră!</a>!
+
+    <h4>De ce un nou server de chei?</h4>
+
+    <p>Am creat <span class="brand">keys.openpgp.org</span>
+      pentru a oferi o alternativă la grupul SKS Keyserver,
+      care este implicit în multe aplicații din prezent.
+      Această rețea distribuită de servere de chei s-a luptat cu
+      <a target="_blank" href="https://medium.com/@mdrahony/are-sks-keyservers-safe-do-we-need-them-7056b495101c">abuz</a>,
+      <a target="_blank" href="https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Problems_with_keyservers">performanță</a>,
+      precum și cu <a href="http://www.openwall.com/lists/oss-security/2017/12/10/1">probleme de confidențialitate</a>,
+      și, mai recent, de asemenea
+      <a target="_blank" href="http://nongnu.13855.n7.nabble.com/SKS-apocalypse-mitigation-td228252.html">GDPR</a>
+     întrebări legate de conformitate.
+      Kristian Fiskerstrand a făcut o treabă extraordinară în ceea ce privește menținerea bazei pentru
+      <a target="_blank" href="https://blog.sumptuouscapital.com/2016/12/10-year-anniversary-for-sks-keyservers-net/">mai bine de zece ani</a>,
+      dar, în acest moment, activitatea de dezvoltare pare să fi
+      <a target="_blank" href="https://bitbucket.org/skskeyserver/sks-keyserver/pull-requests/60/clean-build-with-405">încetat</a>.</p>
+<p>Ne-am gândit că este timpul să luăm în considerare o abordare nouă pentru a rezolva aceste probleme.</p>
+<h4>Informații privind identitatea și non-identitatea</h4>
+
+    <p>Serverul de chei <span class="brand">keys.openpgp.org</span> se divizează 
+    informațiile de identitate și non-identitate în chei.
+    Puteți găsi mai multe detalii pe pagina noastră <a href="/about" target="_blank">Despre</a>:
+     Ideea este că informațiile non-identitate (chei, revocări și așa mai departe)
+    sunt distribuite în mod liber,
+    în timp ce informațiile privind identitatea
+    sunt distribuite numai cu consimțământul
+    care poate fi, de asemenea, revocat în orice moment.</p>
+<p>În cazul în care se verifică o nouă cheie pentru o anumită adresă de e-mail,
+    aceasta o va înlocui pe cea anterioară.
+    În acest fel,
+    fiecare adresă de e-mail este asociată cu cel mult o singură cheie.
+    De asemenea, aceasta poate fi eliminată din listă
+    în orice moment de către proprietarul adresei.
+    Acest lucru este foarte util pentru descoperirea cheilor:
+    dacă o căutare după adresa de e-mail returnează o cheie,
+    înseamnă că aceasta este singura cheie
+    care este valabilă în prezent pentru adresa de e-mail căutată.</p>
+<h4>Suport în Enigmail și OpenKeychain</h4>
+
+    <p>Serverul <span class="brand">keys.openpgp.org</span> de chei
+     va primi suport pentru prima parte în următoarele versiuni ale
+    <a href="https://enigmail.net" target="_blank">Enigmail</a> pentru Thunderbird,
+    precum și
+    <a href="https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain&amp;hl=en">OpenKeychain</a> pe Android.
+   Acest lucru înseamnă că utilizatorii acestor implementări vor
+    beneficia de timpi de răspuns mai rapizi,
+    și de descoperirea îmbunătățită a cheilor în funcție de adresa de e-mail.
+    Sperăm că acest lucru ne va da, de asemenea, un impuls
+    pentru a transforma acest proiect într-un efort mai mare al comunității.</p>
+<h4 id="2019-06-12-launch-challenges">Provocări actuale</h4>
+
+    <p>Tehnicile de păstrare a confidențialității în serverele de chei sunt încă noi,
+    și, din păcate, există încă câteva probleme de compatibilitate.
+    cauzate de divizarea informațiilor de identitate.</p>
+<p>În special, atunci când GnuPG (la data scrierii acestui articol, versiunea 2.2.16) întâlnește
+    o cheie OpenPGP fără identitate,
+    se aruncă o eroare "fără ID de utilizator".
+    și nu procesează noi informații fără identitate
+    (cum ar fi certificatele de revocare).
+    chiar dacă acestea sunt valide din punct de vedere criptografic.
+    Suntem implicați în mod activ în
+    furnizarea de soluții pentru aceste probleme.</p>
+<h4>Viitorul</h4>
+
+    <p>Tehnicile de păstrare a confidențialității în serverele de chei sunt încă noi,
+    și avem mai multe idei pentru reducerea metadatelor.
+    Dar, deocamdată, planul nostru este doar de a
+    să menținem <span class="brand">keys.openpgp.org</span> fiabil și rapid 🐇,
+    să rezolvăm orice bug-uri viitoare 🐞,
+    și <a href="/about#community">să ascultăm feedback-ul</a> din partea comunității. 👂</p>
+<p>Pentru mai multe informații, vizitați
+    paginile noastre <a target="_blank" href="/about">Despre</a>
+    și <a target="_blank" href="/about/faq">FAQ</a> .
+    Puteți începe imediat
+    prin  <a href="/upload" target="_blank">încărcarea cheii dumneavoastră</a>!
+    În afară de asta, mai sunt și alte lucruri interesante de descoperit,
+    cum ar fi <a target="_blank" href="/about/api">API</a>,
+    și un <a target="_blank" href="/about/faq#tor">Onion Service</a>!</p>
+<p>Noroc!
+    <span style="font-size: x-large;">🍻</span></p>
+</div>
+{{/layout}}

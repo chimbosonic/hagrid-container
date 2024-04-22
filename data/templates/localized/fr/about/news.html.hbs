@@ -1,0 +1,104 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>
+<a href="/about">À propos</a> | Nouvelles | <a href="/about/usage">Utilisation</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistiques</a> | <a href="/about/privacy">Protection des données</a>
+</h2></center>
+
+    <h2 id="2019-11-12-celebrating-100k">
+      <div style="float: right; font-size: small; line-height: 2em;">12-11-2019 📅</div>
+      <a style="color: black;" href="/about/news#2019-11-12-celebrating-100k">Nous célébrons 100 000 adresses confirmées ! 📈</a>
+    </h2>
+
+    <p>Il y a cinq mois, nous lancions ce service. Nous avons aujourd’hui atteint une étape remarquable :</p>
+<center style="margin-top: 2em; margin-bottom: 2em;">
+<img src="/assets/img/stats-addresses-2019-11-12.png" style="padding: 1px; border: 1px solid gray;"><br><strong>Cent mille adresses courriel confirmées ! </strong>
+</center>
+
+    <p>Nous remercions tous ceux qui utilisent ce service. Nous remercions tout particulièrement ceux qui nous ont envoyé des rétroactions et qui ont collaboré avec des traductions et même du code.</p>
+<p>Quelques nouvelles sur certaines des choses auxquelles nous travaillons :</p>
+<ul>
+<li>Cette page de nouvelles est maintenant proposée sous la forme de <strong><a target="_blank" href="/atom.xml">fil Atom<img src="/assets/img/atom.svg" style="height: 0.8em;"></a></strong>.</li>
+        <li>Nous travaillons sur un <strong><a target="_blank" href="https://gitlab.com/keys.openpgp.org/hagrid/issues/131">nouveau mécanisme d’actualisation des clés</a></strong> qui protège mieux les données personnelles des utilisateurs.</li>
+        <li>Le travail de <strong>localisation</strong> bat son plein ! Nous espérons proposer bientôt des versions internationales.</li>
+    </ul>
+<p>Si vous souhaitez que <span class="brand">keys.openpgp.org</span> soit traduit dans votre langue maternelle, n’hésitez pas <a target="_blank" href="https://www.transifex.com/otf/hagrid/">à vous joindre à l’équipe de traduction</a> sur Transifex. Nous aimerions recevoir de l’aide, plus particulièrement pour le <strong>russe</strong>, l’<strong>italien</strong>, le <strong>polonais</strong> et le <strong>néerlandais</strong>.</p>
+<p>C’est tout pour ces brèves nouvelles. <span style="font-size: x-large;">👍️</span></p>
+<hr style="margin-top: 2em; margin-bottom: 2em;">
+<h2 id="2019-09-12-three-months-later">
+      <div style="float: right; font-size: small; line-height: 2em;">12-09-2019 📅</div>
+      <a style="color: black;" href="/about/news#2019-09-12-three-months-later">Trois mois après le lancement ✨ </a>
+    </h2>
+
+    <p><a href="/about/news#2019-06-12-launch">Nous avons lancé</a> <span class="brand">keys.openpgp.org</span> il y a maintenant trois mois. Nous sommes heureux d’annoncer que ce fut un succès retentissant. 🥳</p>
+<h4>Adoption dans les clients</h4>
+
+    <p>Le serveur de clés <span class="brand">keys.openpgp.org</span> a très bien été reçu par les utilisateurs, et les clients l’adoptent rapidement. Il est maintenant utilisé par défaut par <a href="https://gpgtools.org/" target="_blank">GPGTools</a>, <a href="https://enigmail.net/" target="_blank">Enigmail</a>, <a href="https://www.openkeychain.org/" target="_blank">OpenKeychain</a>, <a href="https://github.com/firstlookmedia/gpgsync" target="_blank">GPGSync</a>, Debian, NixOS et d’autres. De nombreux tutoriels ont aussi été mis à jour pour diriger les utilisateurs vers nous.</p>
+<p>Alors que nous écrivons ces lignes, plus de 70 000 adresses courriel ont été confirmées.</p>
+<center style="margin-top: 2em; margin-bottom: 2em;">
+<img src="/assets/img/stats-addresses-2019-09-12.png" style="padding: 1px; border: 1px solid gray;"><br><span style="font-size: smaller;">Si ce n’est pas une courbe prometteuse, je ne sais pas ce qui pourrait l’être :)</span>
+</center>
+
+    <p>Il convient de féliciter tout particulièrement GPGTools pour macOS. Ils ont orchestré le processus de mise à jour de manière si fluide que le nombre d’adresses confirmées a totalement explosé après qu’ils ont publié leur mise à jour.</p>
+<h4>Les activités se portent bien</h4>
+
+    <p>Il n’a pas grand-chose à signaler d’un point de vue opérationnel et dans ce cas, pas de nouvelle est synonyme de bonne nouvelle. Depuis le lancement, il n’y a presque pas eu de temps d’arrêt et le volume d’assistance fut faible.</p>
+<p>Notre trafic est actuellement de dix requêtes par seconde (plus durant la journée, moins la fin de semaine), et nous avons envoyé environ 100 000 courriels lors du mois dernier, sans problème.</p>
+<p>Nous avons apporté plusieurs petites améliorations d’ordre opérationnel, dont le déploiement de <a href="http://dnsviz.net/d/keys.openpgp.org/dnssec/" target="_blank">DNSSEC</a>, la mise en place de <a href="/about/api#rate-limiting" target="_blank">limites de débit</a>, apporté la touche finale à nos en-têtes de <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/CSP">politique de sécurité du contenu</a> et activé le mode à <a href="https://blog.torproject.org/whats-new-tor-0298" target="_blank">un seul saut</a> pour notre service onion sur Tor. Vous trouverez une liste plus complète <a href="https://gitlab.com/keys.openpgp.org/hagrid/merge_requests?scope=all&amp;utf8=%E2%9C%93&amp;state=merged" target="_blank">ici</a> (page en anglais).</p>
+<h4>Remise sécurisée de courriels avec MTA-STS</h4>
+
+    <p>Une amélioration qui mérite une mention spéciale est <a href="https://www.hardenize.com/blog/mta-sts">MTA-STS</a>, qui améliore la sécurité des courriels sortants.</p>
+<p>Bien que HTTPS soit déployé à peu près partout de nos jours, ce n’est malheureusement pas le cas pour le courriel. De nombreux serveurs n’ont pas du tout recours au chiffrement ou utilisent un certificat autosigné au lieu d’un certificat adéquat (p. ex. de Let’s Encrypt). Mais les problèmes de remise gênent plus les clients qu’une sécurité réduite et de nombreux courriels sont encore remis sans chiffrement.</p>
+<p>Avec MTA-STS, les opérateurs de domaines peuvent indiquer (par HTTPS) que leur serveur de courriel <em>prend en charge</em> le chiffrement. Si une connexion sécurisée ne peut pas être établie vers un tel serveur, la remise du courriel sera différée, voire refusée au lieu de poursuivre sans sécurité adéquate.</p>
+<p>Cela est particulièrement utile pour des services tels que <span class="brand">keys.openpgp.org</span>. Si le chiffrement n’est pas fiable, des assaillants pourraient assez facilement intercepter les courriels de confirmation. Mais pour les fournisseurs qui ont mis en œuvre MTA-STS, nous pouvons être certains que tous les messages sont remis en toute sécurité et au bon serveur.</p>
+<p>Vous pouvez <a href="https://aykevl.nl/apps/mta-sts/" target="_blank">effectuer un contrôle</a> (site en anglais) pour découvrir si votre fournisseur de service de courriel prend en charge MTA-STS. Si ce n’est pas le cas, veuillez leur envoyer un message et leur demander de rehausser leur niveau de sécurité.</p>
+<h4>Travaux en cours</h4>
+
+    <p>Nous travaillons sur deux choses :</p>
+<p>La première est la <strong>localisation</strong>. La plupart des gens ne parlent pas anglais, mais c’est actuellement la seule langue que nous prenons en charge. Nous collaborons avec le <a href="https://www.opentech.fund/labs/localization-lab/" target="_blank">Labo de localisation</a> afin de traduire le site Web et les courriels sortants en d’autres langues.</p>
+<p>La seconde est de ramener les <strong>signatures par des tiers</strong>. Comme <a href="/about/faq#third-party-signatures">mentionné dans notre FAQ</a>, nous ne les prenons actuellement pas en charge en raison de contenus indésirables et de possibilités d’abus. L’idée est d’exiger des <a href="https://gitlab.com/openpgp-wg/rfc4880bis/merge_requests/20/diffs" target="_blank">signatures croisées</a>, qui permettent à chaque clé de faire son choix quant aux signatures d’autres personnes qu’elle veut distribuer. Malgré cette étape supplémentaire, le processus est assez compatible avec les logiciels existants. De plus, il n’importune pas les utilisateurs qui ne se préoccupent pas des signatures.</p>
+<p>Bien que nous travaillions à les mettre en place, une date de disponibilité n’est prévue ni pour l’une ni pour l’autre.</p>
+<p>Au sujet du problème « <tt>pas d’identité</tt> » avec GnuPG (mentionné dans notre <a href="/about/news#2019-06-12-launch-challenges">dernier article de nouvelles</a> et dans notre <a href="/about/faq#older-gnupg" target="_blank">FAQ</a>), un correctif qui règle ce problème est maintenant en place sur Debian, ainsi que sur GPGTools pour macOS. GnuPG n’a pas encore fusionné ce correctif en amont.</p>
+<p>C’est tout ! Nous vous remercions de votre intérêt. <span style="font-size: x-large;">👋</span> </p>
+<hr style="margin-top: 2em; margin-bottom: 2em;">
+<h2 id="2019-06-12-launch">
+      <div style="float: right; font-size: small; line-height: 2em;">12-06-2019 📅</div>
+      <a href="/about/news#2019-06-12-launch" style="color: black;">Lancement d’un nouveau serveur de clés ! 🚀</a>
+    </h2>
+
+    <p>Résultat d’une initiative communautaire par <a href="https://enigmail.net" target="_blank">Enigmail</a>, <a href="https://openkeychain.org" target="_blank">OpenKeychain</a> et <a href="https://sequoia-pgp.org">Sequoia PGP</a>, nous sommes heureux d’annoncer le lancement d’un nouveau serveur de clés OpenPGP public <span class="brand">keys.openpgp.org</span>. Hourra ! 🎉</p>
+<h4>Pour résumer :</h4>
+
+    <ul>
+<li>Rapide et fiable. Pas de temps d’attente, pas de temps d’arrêt, pas d’incohérence !</li>
+      <li>Précis. Les recherches ne retournent qu’une clé, ce qui permet une découverte de clés facile.</li>
+      <li>Confirmé. Les identités ne sont publiées qu’avec consentement, alors que les renseignements qui ne permettent pas de vous identifier sont distribués librement.</li>
+      <li>Supprimable. Les utilisateurs peuvent supprimer des renseignements personnels avec une simple confirmation par courriel.</li>
+      <li>Écrit en Rust, propulsé par <a href="https://sequoia-pgp.org">Sequoia-PGP</a> (site en anglais). Gratuit et à code source ouvert, en vertu d’une licence AGPLv3.</li>
+    </ul>
+
+    Essayez-le dès maintenant en <a href="/upload">téléversant votre clé</a> !
+
+    <h4>Pourquoi un nouveau serveur de clés ?</h4>
+
+    <p>Nous avons créé <span class="brand">keys.openpgp.org</span> afin de fournir une solution de rechange à la réserve de serveurs de clés SKS, qui est de nos jours utilisée par défaut par de nombreuses applications. Ce réseau distribué de serveurs de clés est aux prises avec des <a target="_blank" href="https://medium.com/@mdrahony/are-sks-keyservers-safe-do-we-need-them-7056b495101c">abus</a>, des problèmes de <a target="_blank" href="https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Problems_with_keyservers">performance</a> et de <a href="http://www.openwall.com/lists/oss-security/2017/12/10/1">protections des données personnelles</a>, et plus récemment aussi avec des questions de conformité au <a target="_blank" href="http://nongnu.13855.n7.nabble.com/SKS-apocalypse-mitigation-td228252.html">RGPD</a> (pages en anglais). Kristian Fiskerstrand a accompli un travail absolument exemplaire de maintenance de la réserve <a target="_blank" href="https://blog.sumptuouscapital.com/2016/12/10-year-anniversary-for-sks-keyservers-net/">depuis plus de dix ans</a>, mais à l’heure actuelle, l’activité de développement semble être <a target="_blank" href="https://bitbucket.org/skskeyserver/sks-keyserver/pull-requests/60/clean-build-with-405">pratiquement arrêtée</a> (pages en anglais).</p>
+<p>Nous avons pensé qu’il était temps d’envisager une approche nouvelle pour résoudre ces problèmes.</p>
+<h4>Les renseignements qui permettent de vous identifier et ceux qui ne le permettent pas</h4>
+
+    <p>Le serveur de clés <span class="brand">keys.openpgp.org</span> sépare dans les clés les renseignements qui peuvent vous identifier de ceux qui ne le peuvent pas.
+Vous trouverez plus de précisions sur notre <a href="/about" target="_blank">page À propos</a> : en gros, les renseignements qui ne permettent pas de vous identifier (les clés, les révocations, etc.) sont distribués librement, alors que ceux qui permettent de le faire sont seulement distribués avec consentement, qui lui-même peut être révoqué n’importe quand.</p>
+<p>Si une nouvelle clé est confirmée pour une adresse courriel donnée, cette dernière remplacera la précédente. De cette façon, chaque adresse courriel est au plus associée à une seule clé. Le propriétaire de l’adresse peut aussi la retirer n’importe quand de la liste. Cela est très pratique pour la découverte de clés : si une recherche par adresse courriel retourne une clé, cela implique que c’est la seule qui est actuellement valide pour l’adresse courriel recherchée.</p>
+<h4>Prise en charge dans Enigmail et OpenKeychain</h4>
+
+    <p>Le serveur de clés <span class="brand">keys.openpgp.org</span> sera pris en charge de façon prioritaire dans les versions à venir d’<a href="https://enigmail.net" target="_blank">Enigmail</a> pour Thunderbird et d’<a href="https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain&amp;hl=en">OpenKeychain</a> pour Android. Cela signifie que les utilisateurs de ces logiciels profiteront de temps de réponse plus courts et d’une découverte de clés par adresse courriel améliorée. Nous espérons que cela nous donnera aussi l’élan nécessaire pour faire évoluer ce projet vers une initiative communautaire de plus grande envergure.</p>
+<h4 id="2019-06-12-launch-challenges">Les défis actuels</h4>
+
+    <p>Les techniques qui protègent les données personnelles sont encore nouvelles pour ce qui est des serveurs de clés et malheureusement, la séparation des renseignements d’identité cause encore quelques problèmes de compatibilité.</p>
+<p>Plus particulièrement, quand GnuPG (version 2.2.16 au moment d’écrire ces lignes) rencontre une clé OpenPGP sans identités, il retourne une erreur « pas d’identité » et ne traite pas les nouveaux renseignements qui ne permettent pas l’identification (tels que les certificats de révocation), même s’ils sont valides d’un point de vue cryptographique. Nous nous efforçons activement de trouver des correctifs pour ces problèmes.</p>
+<h4>L’avenir</h4>
+
+    <p>Les techniques qui protègent les données personnelles sont encore nouvelles pour ce qui est des serveurs de clés et nous avons d’autres idées sur la façon de réduire la quantité de métadonnées. Mais pour l’instant, nous prévoyons seulement d’assurer la fiabilité et la rapidité 🐇 de <span class="brand">keys.openpgp.org</span>, de corriger les bogues qui se présenteraient 🐞, et de rester à l’écoute <a href="/about#community">des rétroactions</a> de la communauté. 👂</p>
+<p>Pour plus de précisions, consultez nos pages <a target="_blank" href="/about">À propos</a> et <a target="_blank" href="/about/faq">FAQ</a>. Vous pouvez commencer tout de suite en <a href="/upload" target="_blank">téléversant votre clé</a>. Vous serez aussi intéressés par notre <a target="_blank" href="/about/api">API</a> et notre <a target="_blank" href="/about/faq#tor">service onion</a>.</p>
+<p>Merci !
+    <span style="font-size: x-large;">🍻</span></p>
+</div>
+{{/layout}}

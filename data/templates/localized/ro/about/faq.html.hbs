@@ -1,0 +1,214 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>
+<a href="/about">Despre</a> | <a href="/about/news">Noutăți</a> | <a href="/about/usage">Utilizare</a> | FAQ | <a href="/about/stats">Statistici</a> | <a href="/about/privacy">Confidențialitate</a>
+</h2></center>
+
+    <p><strong>Pentru instrucțiuni, consultați <a href="/about/usage">ghidul nostru de utilizare</a>.</strong></p>
+
+    <h3 id="sks-pool"><a href="#sks-pool">Acest server face parte din lotul "SKS"?</a></h3>
+
+    <p>Nu. Modelul de federație al bazinului SKS are diverse probleme în ceea ce privește
+        de fiabilitate, rezistență la abuzuri, confidențialitate și utilizabilitate. Am putea face
+        ceva similar, dar <span class="brand">keys.openpgp.org</span>
+        nu va face niciodată parte din fondul SKS propriu-zis.</p>
+
+    <h3 id="federation"><a href="#federation">Este keys.openpgp.org federat? Pot să vă ajut prin rularea unei instanțe?</a></h3>
+
+    <p>Pentru moment, nu.
+        Avem în plan să descentralizăm <span class="brand">keys.openpgp.org</span>
+       la un moment dat.
+        Cu mai multe servere
+        conduse de operatori independenți,
+        putem spera să îmbunătățim fiabilitatea
+        acestui serviciu și mai mult.</p>
+
+    <p>Mai mulți oameni s-au oferit să ajute
+        prin "rularea unei instanțe de server Hagrid".
+        Apreciem foarte mult această ofertă,
+        dar probabil că nu vom avea niciodată un model de federație "deschisă" precum SKS,
+        în care toată lumea poate rula o instanță și poate deveni parte a unui "grup".
+        Acest lucru se datorează din două motive:</p>
+    <ol>
+<li>Federația cu participare deschisă presupune ca toate datele să fie publice.
+            Acest lucru are un impact semnificativ asupra vieții private a utilizatorilor noștri, deoarece
+            permite oricui să extragă o listă cu toate adresele de e-mail.</li>
+        <li>Serverele rulate ca hobby de administratori ocazionali nu îndeplinesc cerințele noastre.
+            standardele de fiabilitate și performanță.</li>
+    </ol>
+<h3 id="non-email-uids"><a href="#non-email-uids">De ce nu există suport
+            pentru identități care nu sunt adrese de e-mail?</a></h3>
+
+    <p>Avem nevoie de consimțământul explicit pentru a distribui informații privind identitatea.
+        Identități care nu sunt adrese de e-mail, cum ar fi fotografii sau site-uri web
+        URL-uri, nu ne oferă o modalitate simplă de a obține acest consimțământ.</p>
+
+    <p>Notă: Unele programe OpenPGP creează chei cu formatări incorecte.
+        de e-mail formate greșit.  Este posibil ca aceste adrese să nu fie recunoscute corect pe
+        <span class="brand">keys.openpgp.org</span>.</p>
+
+    <h3 id="verify-multiple"><a href="#verify-multiple">Pot să verific mai mult de
+            o cheie pentru o anumită adresă de e-mail?</a></h3>
+
+    <p>O adresă de e-mail poate fi asociată doar cu o singură cheie.
+        Atunci când o adresă este verificată pentru o nouă cheie,
+        aceasta nu mai apare în nicio cheie
+        pentru care a fost verificată anterior.
+        <a href="/about">Informațiile fără identitate</a> vor fi distribuite în continuare
+        pentru toate cheile.</p>
+
+    <p>Aceasta înseamnă o căutare după adresa de e-mail
+        va returna doar o singură cheie,
+        nu mai mulți candidați.
+        Astfel, se elimină o alegere imposibilă pentru utilizator
+        ("Care cheie este cea corectă?"),
+        și face ca descoperirea cheilor prin e-mail să fie mult mai convenabilă.</p>
+
+    <h3 id="email-protection"><a href="#email-protection">Ce faci pentru a
+            protejați e-mailurile de verificare de ieșire?</a></h3>
+
+    <p>Noi folosim un standard modern numit
+        <a href="https://www.hardenize.com/blog/mta-sts" target="_blank">MTA-STS</a>,
+        combinat cu
+        <a href="https://starttls-everywhere.org/" target="_blank">STARTTLS Everywhere</a>
+       de către EFF,
+        pentru a ne asigura că e-mailurile de verificare sunt trimise în siguranță.
+        Acest lucru protejează împotriva ascultării și interceptării în timpul livrării.</p>
+
+    <p>Mecanismul MTA-STS funcționează numai dacă este acceptat de e-mailul destinatarului.
+        furnizorului de e-mail. În caz contrar, e-mailurile vor fi livrate ca de obicei.
+        Puteți <a href="https://www.hardenize.com/">rula acest test</a>
+        pentru a vedea dacă furnizorul dvs. de e-mail îl acceptă.
+        Dacă intrarea "MTA-STS" din stânga nu este bifată cu verde,
+        vă rugăm să solicitați furnizorului dvs. să își actualizeze configurația.</p>
+
+    <h3 id="third-party-signatures"><a href="#third-party-signatures">
+            Distribuiți "semnături de la terți"?</a></h3>
+
+    <p>Răspuns scurt: Nu.</p>
+
+    <p>O "semnătură a unei terțe părți" este o semnătură pe o cheie
+        care a fost făcută de o altă cheie.
+        Cel mai frecvent,
+        acestea sunt semnăturile produse atunci când se "semnează cheia cuiva",
+        care reprezintă baza pentru
+         "<a href="https://en.wikipedia.org/wiki/Web_of_trust" target="_blank">rețeaua de încredere</a>".
+        Din mai multe motive,
+        aceste semnături nu sunt distribuite în prezent
+        prin intermediul<span class="brand">keys.openpgp.org</span>.</p>
+
+    <p>Principalul motiv este <strong>spam</strong>.
+        Semnăturile terților permit atașarea de date arbitrare la cheia oricui,
+        și nimic nu oprește un utilizator rău intenționat să
+        atașarea unui număr atât de mare de megaocteți de informații la o cheie.
+        încât aceasta devine practic inutilizabilă.
+        Chiar mai rău,
+        ar putea atașa conținut ofensator sau ilegal.</p>
+
+    <p>Există idei pentru a rezolva această problemă.
+        De exemplu, semnăturile ar putea fi distribuite împreună cu semnatarul,
+        mai degrabă decât cu semnatarul.
+        Alternativ, am putea solicita
+        semnarea încrucișată de către semnatar înainte de distribuire
+        pentru a susține o
+        <a href="https://wiki.debian.org/caff" target="_blank">caff-style</a>
+        workflow.
+        Dacă există suficient interes,
+        suntem deschiși să colaborăm cu alte proiecte OpenPGP
+        la o soluție.</p>
+
+    <h3 id="no-sign-verified"><a href="#no-sign-verified">De ce să nu semneze chei
+            după verificare?</a></h3>
+
+    <p>Serviciul <span class="brand">keys.openpgp.org</span> este destinat pentru chei
+        distribuție și descoperire, nu ca o autoritate de certificare de facto.
+        Implementările de client care doresc să ofere o comunicare verificată ar trebui să
+        să se bazeze pe propriul lor model de încredere</p>
+
+    <h3 id="revoked-uids"><a href="#revoked-uids">De ce identitățile revocate nu sunt
+            distribuite ca atare?</a></h3>
+
+    <p>Atunci când o cheie OpenPGP marchează una dintre identitățile sale ca fiind revocată, aceasta
+        identitate nu mai trebuie să fie considerată valabilă pentru cheie, iar această
+        informații ar trebui, în mod ideal, să fie distribuită tuturor clienților OpenPGP care
+        care cunosc deja identitatea nou revocată.</p>
+    <p>Din păcate, în prezent nu există o modalitate bună de distribuire a revocărilor,
+        care să nu dezvăluie și identitatea revocată în sine.  Nu dorim să
+        să distribuim identități revocate, deci nu putem distribui identitatea la
+        deloc.</p>
+    <p>Există soluții propuse pentru această problemă, care permit distribuirea
+        revocărilor fără a dezvălui și identitatea în sine.  Dar până în prezent
+        nu există o specificație finală sau suport în niciun software OpenPGP.  Noi
+        sperăm că o soluție va fi stabilită în viitorul apropiat și va
+        adăugăm suport pe<span class="brand">keys.openpgp.org</span> de îndată ce
+        vom putea.</p>
+
+    <h3 id="search-substring"><a href="#search-substring">De ce nu este posibilă căutarea după o parte a unei adrese de e-mail, cum ar fi doar domeniul?</a></h3>
+
+    <p>Unele servere de chei permit căutarea cheilor după o parte a unei adrese de e-mail.
+        Acest lucru permite descoperirea nu numai a cheilor, ci și a adreselor, cu o interogare de tipul "chei pentru adrese la gmail punct com".
+        Astfel, adresele tuturor cheilor de pe aceste servere de chei sunt efectiv incluse într-o listă publică.</p>
+
+    <p>O căutare după adresa de e-mail pe<span class="brand">keys.openpgp.org</span> returnează o cheie numai dacă aceasta corespunde exact cu adresa de e-mail.
+        În acest fel, un utilizator normal poate descoperi cheia asociată oricărei adrese pe care o cunoaște deja, dar nu poate descoperi adrese de e-mail noi.
+        Acest lucru împiedică un utilizator rău intenționat sau un spammer să obțină cu ușurință o listă cu toate adresele de e-mail de pe server.</p>
+
+    <p>Am inclus această restricție în <a href="/about/privacy">politica noastră de confidențialitate</a>,
+        ceea ce înseamnă că nu o putem schimba fără a cere consimțământul utilizatorului.</p>
+
+    <h3 id="tor"><a href="#tor">Susțineți Tor?</a></h3>
+
+    <p>Bineînțeles că da!
+        Dacă aveți Tor instalat,
+        puteți ajunge la <span class="brand">keys.openpgp.org</span> în mod anonim
+        ca un
+        <a href="https://support.torproject.org/onionservices/#onionservices-2" target="_blank">onion service</a>:
+        <br><a href="http://zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion">zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion</a></p>
+
+    <h3 id="encrypt-verification-emails"><a href="#encrypt-verification-emails">
+            De ce să nu criptați e-mailurile de verificare?</a></h3>
+
+    Din diverse motive:
+    <ol>
+<li>Este mai complicat, atât pentru utilizatorii noștri, cât și pentru noi.</li>
+        <li>Nu previne atacurile - un atacator nu câștigă nimic din
+            încărcarea unei chei la care nu are acces.</li>
+        <li>Ștergerea ar trebui să fie posibilă chiar și atunci când o cheie este
+            pierdută.</li>
+        <li>Ar fi nevoie de un mecanism diferit (și mai complicat) pentru a
+            încărca chei care pot doar să semneze.</li>
+    </ol>
+<h3 id="older-gnupg"><a href="#older-gnupg">
+      Am probleme cu actualizarea unor chei cu GnuPG.  Există o eroare?
+    </a></h3>
+
+    <p>GnuPG consideră că cheile care nu conțin informații de identitate sunt invalide și refuză să le importe.
+      Cu toate acestea, o cheie care nu conține <a href="/about">adrese de e-mail verificate</a> poate conține totuși informații utile.
+      În special, este încă posibil să se verifice dacă cheia este revocată sau nu.</p>
+    <p>În iunie 2019, echipa <span class="brand">keys.openpgp.org</span> a creat un patch care îi permite lui GnuPG să proceseze actualizări de la chei fără informații de identitate.
+      Acest patch a fost inclus rapid în mai multe distribuții din aval ale GnuPG, inclusiv Debian, Fedora, NixOS și GPG Suite pentru macOS.</p>
+    <p>În martie 2020, echipa GnuPG a respins patch-ul și a actualizat starea problemei la "Wontfix".
+      Acest lucru înseamnă că <strong>versiunile fără patch-uri ale GnuPG nu pot primi actualizări de la <span class="brand">keys.openpgp.org</span> pentru cheile care nu au nicio adresă de e-mail verificată</strong>.
+      Puteți citi despre această decizie în problema  <a href="https://dev.gnupg.org/T4393#133689">T4393</a> de pe GnuPG bug tracker.</p>
+    <p>Puteți verifica dacă versiunea dvs. de GnuPG este afectată cu următoarele instrucțiuni.</p>
+    <blockquote>
+<span style="font-size: larger;">Importul cheii de test:</span><br><br>
+      $ curl https://keys.openpgp.org/assets/uid-test.pub.asc | gpg --import<br>
+      gpg: key F231550C4F47E38E: "Alice Lovelace &lt;alice@openpgp.example&gt;"importat<br>
+      gpg: Numărul total procesat: 1<br>
+      gpg:               importat: 1<br><br>
+</blockquote>
+    <blockquote>
+<span style="font-size: larger;">Odată cu patch-ul, cheia va fi actualizată dacă este cunoscută la nivel local:</span><br><br>
+      $ gpg --recv-keys EB85BB5FA33A75E15E944E63F231550C4F47E38E<br>
+      gpg: key F231550C4F47E38E: "Alice Lovelace &lt;alice@openpgp.example&gt;" nu s-a schimbat<br>
+      gpg: Numărul total procesat: 1<br>
+      gpg:              neschimbat: 1<br><br>
+</blockquote>
+    <blockquote>
+<span style="font-size: larger;">Fără patch, o cheie fără identitate este întotdeauna respinsă:</span><br><br>
+      $ gpg --recv-keys EB85BB5FA33A75E15E944E63F231550C4F47E38E<br>
+      gpg: key EB85BB5FA33A75E15E944E63F231550C4F47E38E: fără identitate de utilizator<br>
+</blockquote>
+</div>
+{{/layout}}

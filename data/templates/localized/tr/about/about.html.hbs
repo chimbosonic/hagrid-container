@@ -1,0 +1,48 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Hakkında | <a href="/about/news">Haberler</a> | <a href="/about/usage">Kullanım</a> | <a href="/about/faq">SSS</a> | <a href="/about/stats">İstatistikler</a> | <a href="/about/privacy">Mahremiyet</a>
+</h2></center>
+
+    <p><span class="brand">keys.openpgp.org</span> sunucusu OpenPGP uyumlu
+        anahtarların dağıtımı ve keşfi için, çoğunlukla "anahtar sunucusu"
+        olarak adlandırılan, kamuya açık bir hizmettir. </p>
+
+    <p><strong>Yönergeler için, <a href="/about/usage">kullanma kılavuzumuza</a> bakabilirsiniz.</strong></p>
+
+    <h3>Nasıl çalışıyor</h3>
+
+    <p>OpenPGP anahtarı iki tür bilgi içerir:</p>
+
+    <ul>
+<li>
+<strong>Kimlik bilgisi </strong> anahtarın sahibini tanımlayan, "Kullanıcı ID" olarak da bilinen kısımları tarif eder. Bir kullanıcı ID genellikle bir isim ve bir e-posta adresi içerir.</li>
+        <li>
+<strong>Kimlik olmayan bilgi</strong> anahtarın kendisiyle ilgili olan bütün teknik bilgidir. Bu imzaları ve şifrelenmiş mesajları doğrulamak için kullanılan büyük sayıları içerir. Ayrıca yaratılma tarihi, bazı zaman aşımı tarihleri ve fesih durumu gibi üst veriyi de içerir. </li>
+    </ul>
+<p>Geleneksel olarak, bu bilgi parçaları her zaman birlikte dağıtılır. <span class="brand">keys.openpgp.org</span> üzerindeyse bu parçalara farklı davranılıyor. Her ne kadar insanlar herhangi bir OpenPGP anahtarının tüm kısımlarını <span class="brand">keys.openpgp.org</span>'a yükleyebilse de, anahtar sunucumuz sadece belirli kısımlarını belirli koşullar altında saklar ve yayınlar:</p>
+
+    <p>Her bir <strong>kimlik olmayan bilgi</strong>, kriptografik sağlamlık denetimini geçmesi durumunda saklanacak ve özgürce dağıtılacaktır. Herhangi bir kişi bu kısımları, bir kişiyi doğrudan tanımlamak amacıyla kullanılamayacak teknik bilgileri içerdiği için, istediği zaman indirebilecektir. İyi OpenPGP yazılımları <span class="brand">keys.openpgp.org</span>hizmetini, bilgi sahibi olduğu anahtarların bu bilgisini güncel tutmak için kullanabilir. Bu OpenPGP kullanıcılarının güvenli ve güvenilir iletişimi sürdürmesine yardımcı olur.</p>
+
+    <p>Bir OpenPGP anahtarındaki <strong>Kimlik bilgisi</strong> sadece rızaya dayalı olarak dağıtılmaktadır. Kişisel veriyi içerir ve bir anahtarın şifreleme veya imza doğrulaması için kullanılması için mutlaka gerekli değildir. Anahtar sahibi, e-posta adresini doğrulayarak rıza verdiğinde, anahtar adresle aramayla bulunabilir.</p>
+
+    <h3 id="community">Topluluk ve platform</h3>
+
+    <p>Bu hizmet bir topluluk çabasıyla yürütülmektedir.
+        Bizimle OFTC IRC üzerinde 
+        #hagrid kanalında konuşabilirsiniz,
+        ayrıca Matrix üzerinde #hagrid:stratum0.org
+        olarak erişebilirsiniz. 
+        Elbette bize e-posta aracılığıyla da
+        <tt>support at keys dot openpgp dot org</tt>    
+        adresinden ulaşabilirsiniz.
+        Bu hizmeti yürüten insanlar OpenPGP ekosistemindeki, 
+        Sequoia-PGP, OpenKeychain ve Enigmail'i de içeren
+        farklı projelerden geliyorlar.</p>
+
+    <p>Teknik olarak <span class="brand">keys.openpgp.org</span> <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a> anahtar sunucusu yazılımı üzerinde çalışıyor.
+         Bu sunucu <a href="https://sequoia-pgp.org">Sequoia-PGP</a> tabanlıdır.
+         İnternet Özgürlüğü projelerine odaklanmış ve
+         <a href="https://greenhost.net/" target="_blank">Greenhost</a> tarafından yönetilen bir barındırma 
+         platformu olan <a href="https://eclips.is" target="_blank">eclips.is</a> üzerinde barındırılıyor.</p>
+</div>
+{{/layout}}

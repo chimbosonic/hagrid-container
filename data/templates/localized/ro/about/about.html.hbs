@@ -1,0 +1,69 @@
+{{#> layout }}
+<div class="about">
+    <center><h2>Despre | <a href="/about/news">Noutăți</a> | <a href="/about/usage">Utilizare</a> | <a href="/about/faq">FAQ</a> | <a href="/about/stats">Statistici</a> | <a href="/about/privacy">Confidențialitate</a>
+</h2></center>
+
+    <p>Serverul <span class="brand">keys.openpgp.org</span> este un serviciu public pentru
+        distribuție și descoperire a cheilor compatibile cu OpenPGP, în mod obișnuit
+        denumit în mod obișnuit "server de chei".</p>
+
+    <p><strong>Pentru instrucțiuni, consultați al nostru <a href="/about/usage">ghid de utilizare</a>.</strong></p>
+
+    <h3>Cum funcționează</h3>
+
+    <p>O cheie OpenPGP conține două tipuri de informații:</p>
+
+    <ul>
+<li>
+<strong>Informațiile privind identitatea</strong> descriu părțile din
+            o cheie care identifică proprietarul acesteia, cunoscute și sub denumirea de "ID-uri de utilizator".
+            Un ID de utilizator include, de obicei, un nume și o adresă de e-mail.</li>
+        <li>
+<strong>Informațiile fără identitate</strong> sunt toate informațiile tehnice
+            informații tehnice despre cheia în sine. Acestea includ numerele mari
+            utilizate pentru verificarea semnăturilor și criptarea mesajelor.
+            De asemenea, include metadate precum data creării, unele date de expirare
+            date de expirare și starea de revocare.</li>
+    </ul>
+<p>În mod tradițional, aceste informații au fost întotdeauna distribuite
+        împreună. Pe <span class="brand">keys.openpgp.org</span>, acestea sunt
+        tratate diferit.  În timp ce oricine poate încărca toate părțile oricărei chei OpenPGP
+        la <span class="brand">keys.openpgp.org</span>, serverul nostru de chei
+        va reține și va publica doar anumite părți în anumite
+        condiții:</p>
+
+    <p>Orice <strong>informație care nu este de identitate</strong>  va fi stocată și va fi
+       redistribuită în mod liber, dacă trece de o verificare criptografică a integrității.
+        Oricine poate descărca aceste părți în orice moment, deoarece ele conțin doar
+       date tehnice care nu pot fi folosite pentru a identifica direct o persoană.
+        Un software OpenPGP bun poate utiliza <span class="brand">keys.openpgp.org</span>
+        pentru a menține aceste informații actualizate pentru orice cheie despre care știe.
+         Acest lucru ajută utilizatorii OpenPGP să mențină o comunicare sigură și fiabilă.</p>
+
+    <p> <strong>Informațiile de identitate</strong> dintr-o cheie OpenPGP
+        se distribuie numai cu consimțământ.
+        Acestea conțin date cu caracter personal și nu sunt strict necesare pentru
+        ca o cheie să fie utilizată pentru criptare sau pentru verificarea semnăturii.
+        Odată ce proprietarul își dă consimțământul prin verificarea adresei sale de e-mail,
+        cheia poate fi găsită prin intermediul căutării după adresă.</p>
+
+    <h3 id="community">Comunitate și platforma</h3>
+
+    <p>Acest serviciu este gestionat ca un efort comunitar.
+        Puteți vorbi cu noi în
+        #hagrid pe OFTC IRC,
+        de asemenea, puteți ajunge la #hagrid:stratum0.org pe Matrix.
+        Bineînțeles, ne puteți contacta și prin e-mail,
+        la <tt>support at keys dot openpgp dot org</tt>.
+       Cei care conduc acest proiect sunt
+        din diverse proiecte din ecosistemul OpenPGP,
+        inclusiv Sequoia-PGP, OpenKeychain și Enigmail.</p>
+
+    <p>Din punct de vedere tehnic,
+        <span class="brand">keys.openpgp.org</span>rulează pe software-ul <a href="https://gitlab.com/keys.openpgp.org/hagrid" target="_blank">Hagrid</a> keyserver ,
+        care se bazează pe <a href="https://sequoia-pgp.org">Sequoia-PGP</a>.
+        Noi funcționăm pe <a href="https://eclips.is" target="_blank">eclips.is</a>,
+        o platforma de găzduire axată pe proiecte de libertate pe internet,
+        care este administrată de <a href="https://greenhost.net/" target="_blank">Greenhost</a>.</p>
+</div>
+{{/layout}}

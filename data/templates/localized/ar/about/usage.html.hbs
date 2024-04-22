@@ -1,0 +1,121 @@
+{{#> layout }}
+<div class="about usage">
+    <center><h2>‫<a href="/about">حول</a> | <a href="/about/news">اﻷخبار</a> | الاستخدام | <a href="/about/faq">اﻷسئلة الشائعة</a> | <a href="/about/stats">اﻹحصاءات</a> | <a href="/about/privacy">حماية البيانات‬</a>
+</h2></center>
+
+    <p>‫نقوم في هذه الصفحة، بجمع المعلومات المتعلقة بكيفية استخدام <span class="brand">keys.openpgp.org</span> مع مختلف المنتجات البرمجية التي تعتمد على OpenPGP.<br> مازلنا في صدد إضافة المزيد. إذا لاحظت أشياء ناقصة، يُرجى مراسلتنا حول ذلك، وسنحاول جاهدين، إضافة ما ينقص.‬</p>
+
+    <h2 id="web" style="padding-left: 3%;"><a href="#web">واجهة الموقع</a></h2>
+    <p>‫تسمح لك واجهة الموقع في <span class="brand">keys.openpgp.org</span> بـ :‬</p>
+
+    <p>
+        </p>
+<ul>
+<li>
+<a href="/">البحث</a> اليدوي عن المفاتيح، بواسطة بصمته أو عنوانه الإلكتروني.‏</li>
+            <li>‫<a href="/upload">رفع</a> المفاتيح يدويا، ثم التحقق منها بعد ذلك.‬</li>
+            <li>‫<a href="/manage">إدارة</a> مفاتيحك، ثم إزالة الهويات المنشورة.‬</li>
+        </ul>
+<h2 id="enigmail">
+        <div><img src="/assets/img/enigmail.svg"></div>
+        <a href="#enigmail">Enigmail</a>
+    </h2>
+    <p>‫يستخدم <a href="https://enigmail.net" target="_blank">Enigmail</a> في Thunderbird افتراضيا <span class="brand">keys.openpgp.org</span> منذ اﻹصدار 2.0.12.‬</p>
+    <p>‫الدعم الكامل متاح منذ اﻹصدار 2.1 لـ Enigmail (في <a href="https://www.thunderbird.net/en-US/thunderbird/68.0beta/releasenotes/" target="_blank">Thunderbird 68</a> أو اﻷحدث) :‬</p>
+<ul>
+<li>سوف تُحدَّث المفاتيح تلقائيا.‏</li>
+            <li>خلال إنشاء مفتاحك، يمكنك رفعه ثم التحقق منه.‏</li>
+            <li>يمكنك العثور على المفاتيح بعنوان البريد الإلكتروني.‏</li>
+        </ul>
+<h2 id="gpg-suite">
+        <div><img src="/assets/img/gpgtools.png"></div>
+        <a href="#gpg-suite">GPG Suite</a>
+    </h2>
+    <p>‫يستخدم <a href="https://gpgtools.org/">GPG Suite</a> لنظام مَاكْ <span class="brand">keys.openpgp.org</span> افتراضيا، منذ غشت 2019.‬</p>
+
+    <h2 id="openkeychain">
+        <div><img src="/assets/img/openkeychain.svg"></div>
+        <a href="#openkeychain">OpenKeychain</a>
+    </h2>
+    <p>‫يستخدم <a href="https://gpgtools.org/">OpenKeychain</a> لنظام أندرويد <span class="brand">keys.openpgp.org</span> افتراضيا، منذ غشت 2019.‬</p>
+<ul>
+<li>سوف تُحدَّث المفاتيح تلقائيا.‏</li>
+            <li>يمكنك العثور على المفاتيح بعنوان البريد الإلكتروني.‏</li>
+        </ul>
+<p>تجدر اﻹشارة إلى غياب أي دعم مُدمَج لرفع عناوين البريد الإلكتروني وأيضا غياب التحقق منها.‏</p>
+
+    <h2 id="pignus">
+        <div><img src="/assets/img/pignus.png"></div>
+        <a href="#pignus">Pignus</a>
+    </h2>
+    <p>‫يستخدم <a href="https://gpgtools.org/">Pignus</a> لنظام iOS ‏<span class="brand">keys.openpgp.org</span> افتراضيا، منذ غشت 2019.‬</p>
+<ul>
+<li>يمكنك رفع مفاتيحك في أي وقت.‏</li>
+            <li>يمكنك العثور على المفاتيح بعنوان البريد الإلكتروني.‏</li>
+        </ul>
+<h2 id="gnupg">
+        <div><img src="/assets/img/gnupg.svg"></div>
+        <a href="#gnupg">GnuPG</a>
+    </h2>
+
+    <p>‫لتهيئة <a href="https://gnupg.org">GnuPG</a> لكي يستخدم <span class="brand">keys.openpgp.org</span> كخادم للمفاتيح، عليك بإضافة السطر التالي في الملف <tt>gpg.conf</tt> :‬</p>
+<blockquote>keyserver hkps://keys.openpgp.org</blockquote>
+    
+
+    <h4 id="gnupg-retrieve"><a href="#gnupg-retrieve">جلب المفاتيح</a></h4>
+    <ul>
+<li>للعثور على مفتاح مستخدم ما، بعنوان البريد الإلكتروني :‏<blockquote>gpg --auto-key-locate keyserver --locate-keys user@example.net</blockquote>
+        </li>
+        <li>لإنعاش كل مفاتيحك (مثلا شهادات النقض أو المفاتيح الفرعية) :‏<blockquote>gpg --refresh-keys</blockquote>
+        </li>
+    </ul>
+<h4 id="gnupg-upload"><a href="#gnupg-upload">رفع مفتاحك</a></h4>
+    <p>‫يمكن رفع المفاتيح بواسطة GnuPG عبر اﻷمر <tt>‎--send-keys</tt>، لكن لن يكون ممكنا التحقق من معلومات الهوية بتلك الطريقة لكي يكون باﻹمكان العثور على المفتاح بعنوان البريد الإلكتروني (<a href="/about">ماذا يعني هذا ؟</a>)‬</p>
+
+    <ul>
+<li>يمكنك محاولة استخدام هذا الاختصار لرفع مفتاحك، والذي سيُظهِر وصلة مباشرة نحو صفحة التحقق :‏<blockquote>gpg --export your_address@example.net | curl -T - {{ base_uri }}</blockquote>
+        </li>
+        <li>‫بالمقابل، يمكنك تصديرها نحو ملف، ثم تحديد الملف في صفحة <a href="/upload" target="_blank">الرفع</a> :‬<blockquote>gpg --export your_address@example.net &gt; my_key.pub</blockquote>
+        </li>
+    </ul>
+<h4 id="gnupg-troubleshooting"><a href="#gnupg-troubleshooting">المُساعَفة</a></h4>
+    <ul>
+<li>‫تتضمن بعض الملفات القديمة مثل <tt>‎~/gnupg/dirmngr.conf</tt> سطرا يشبه :‬<blockquote>hkp-cacert ~/.gnupg/sks-keyservers.netCA.pem</blockquote>
+            <p>تلك التهيئة لم تعد ضرورية، لكنها تمنع الشهادات المعتادة من العمل. لذلك، يُوصَى ببساطة بإزالة ذلك السطر من ملف التهيئة.</p>
+        </li>
+        <li>خلال إنعاش المفاتيح، قد تظهر لك أخطاء كاﻵتي :‏<blockquote>gpg: key A2604867523C7ED8: no user ID</blockquote>
+            ‫ذلك <a href="https://dev.gnupg.org/T4393" target="_blank">مشكل معروف في GnuPG</a>، ونحن نعمل مع فريق GnuPG لحل تلك المشكلة.‬
+        </li>
+    </ul>
+<h4 id="gnupg-tor"><a href="#gnupg-tor">الاستخدام مع تُورْ</a></h4>
+    <p>‫بالنسبة للمستخدمين الأكثر حذرا، يمكن الوصول إلى <span class="brand">keys.openpgp.org</span> بشكل مجهول بواسطة خدمة البصلة، إذا كان لديك <a href="https://support.torproject.org/fr/onionservices/#onionservices-2" target="_blank">تُورْ</a> مُثبَّتا، عليك باستخدام التهيئة التالية :‬</p>
+<blockquote>keyserver hkp://zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion</blockquote>
+    
+
+    <h2 style="padding-left: 3%;" id="wkd-as-a-service"><a href="#wkd-as-a-service">خدمة  دليل مفاتيح الوِبْ</a></h2>
+
+    <p>‫إن دليل مفاتيح الوِبْ (اختصارا، باﻹنجليزية WKD) هي معيار البحث عن مفاتيح OpenPGP بواسطة عنوان البريد اﻹلكتروني، عبر اسم نطاق مزود خدمة البريد اﻹلكتروني. كما أنه يُستخدَم للعثور على المفاتيح المجهولة في بعض تطبيقات البريد اﻹلكتروني، مثل <a href="https://www.gpg4win.de/about.html" target="_blank">GpgOL</a>.‬</p>
+<p>‫يمكن استخدام <span class="brand">keys.openpgp.org</span> كخدمة WKD مع أي نطاق. للقيام بذلك، يحتاج ذلك النطاق إلى تسجيلة <tt>CNAME</tt> تفوض لنطاقه الفرعي <tt>openpgpkey</tt> التوجيه نحو <tt>wkd.keys.openpgp.org</tt>. من المفترض أن يكون ذلك ممكنا انطلاقا من واجهة موقع أي مضيف لنظام أسماء النطاقات.‬</p>
+<p>‫فور تفعيله لنطاق ما، ستصبح العناوين المُتحقَّق منها متاحة للبحث عنها تلقائيا بفضل الخدمة WKD.‬</p>
+<p>‫من المفترض أن تكون تسجيلة <tt>CNAME</tt> تقريبا، على الشكل التالي :‬</p>
+<blockquote>‪$ drill openpgpkey.example.org<br>‬
+        ...<br>
+‪        openpgpkey.example.org.       300     IN      CNAME   wkd.keys.openpgp.org.‬</blockquote>
+
+    <p>هناك طريقة بسيطة للتحقق من عمل تلك الخدمة :‏</p>
+<blockquote>‪$ curl 'https://wkd.keys.openpgp.org/status/?domain=openpgpkey.example.org'<br>‬
+‪CNAME lookup ok: openpgpkey.example.org resolves to wkd.keys.openpgp.org<br>‬</blockquote>
+
+    <p>لفحص جلب المفاتيح :‏</p>
+<blockquote>‪$ gpg --locate-keys --auto-key-locate clear,nodefault,wkd address@example.org<br>‬</blockquote>
+
+    <h2 style="padding-left: 3%;">واجهة برمجة التطبيقات</h2>
+
+    <p>‫لقد وفرنا لك واجهة برمجة لدعم الاندماج مع تطبيقات OpenPGP. يمكنك الاطلاع على <a href="/about/api">وثائقنا لواجهة برمجة التطبيقات</a>.‬</p>
+
+    <h2 style="padding-left: 3%;">أخريات</h2>
+
+    <p>‫أ ينقصك دليل خاص ببرنامج OpenPGP المفضل لديك ؟ هذا الموقع يتطور باستمرار، ونحن نتقبَّل من يعيننا على تحسينه. ما عليك سوى إخبارنا بالبريد الإلكتروني <span class="email">support في keys نقطة openpgp نقطة org</span> إذا رغبت بمساعدتنا.‬</p>
+
+</div>
+{{/layout}}
