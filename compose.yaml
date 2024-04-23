@@ -1,0 +1,10 @@
+version: '0.5'
+services:
+  hagrid:    
+    image: "chimbosonic/hagrid:latest"
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD\data:/var/lib/hagrid
+    
+    
