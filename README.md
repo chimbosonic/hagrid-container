@@ -38,6 +38,14 @@ docker run --rm -it -p 8080:8080\
     
     docker run --rm -it -p 8080:8080 -v $PWD\data:/var/lib/hagrid chimbosonic/hagrid:latest
 
+### Option 4: Kubernetes
+
+edit kubernetes/hagrid.yml, 
+-change values such as host (default is 'hagrid.ss.es')
+-change storageClass , default is 'rancher.io/local-path'(for rancher-desktop)
+
+    kubectl create namespace hagrid
+    kubectl apply -f ./kubernetes -n hagrid
 
 ### How to build
 
