@@ -5,7 +5,7 @@ REPO=https://gitlab.com/hagrid-keyserver/hagrid.git
 
 function install_deps() {
 	apt-get update -y
-	apt-get install -y build-essential pkg-config clang libclang-dev libssl-dev gettext zsh git
+	apt-get install -y build-essential pkg-config clang libclang-dev libssl-dev libsqlite3-dev gettext zsh git
 }
 
 function prep_build() {

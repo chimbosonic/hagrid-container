@@ -2,7 +2,7 @@
 
 function install_deps() {
   apt-get update -y
-  apt-get install -y gettext
+  apt-get install -y gettext sqlite3
 }
 
 function prep_install {
