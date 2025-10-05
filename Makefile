@@ -19,7 +19,7 @@ force-build:
 	$(TAGS)
 
 run:
-	@docker run -it --rm --name $(PROJECT) -p 8080:8080\
+	@docker run -it --rm --name $(PROJECT) -p 7070:8080\
 		-v $(shell pwd)/temp:/var/lib/hagrid\
 		-t $(LATEST)
 

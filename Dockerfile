@@ -1,13 +1,17 @@
 FROM rust:slim
 
-COPY scripts/build.sh ./
-RUN chmod +x ./build.sh && ./build.sh
+RUN apt-get update -y && apt-get install -y build-essential pkg-config clang libclang-dev libssl-dev libsqlite3-dev gettext zsh git
+
+WORKDIR /build
+RUN git clone https://gitlab.com/hagrid-keyserver/hagrid.git
+
+WORKDIR /build/hagrid
+RUN cargo build --release
 
 FROM rust:slim
 
-COPY scripts/install.sh ./
-
-RUN chmod +x ./install.sh && ./install.sh
+RUN apt-get update -y && apt-get install -y gettext sqlite3
+RUN mkdir -p /hagrid_template/ && mkdir -p /var/lib/hagrid/
 
 COPY --from=0 /build/hagrid/target/release/hagrid /usr/local/bin/hagrid
 COPY --from=0 /build/hagrid/Rocket.toml.dist /hagrid_template/Rocket.toml
